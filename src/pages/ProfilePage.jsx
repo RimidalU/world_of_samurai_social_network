@@ -1,6 +1,6 @@
 import React from 'react'
 
-import UserInfo from '../layouts/UserInfo'
+import UserInfo from '../layouts/UserProfile'
 import UserPosts from '../layouts/UserPosts'
 
 const ProfilePage = () => {

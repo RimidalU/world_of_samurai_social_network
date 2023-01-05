@@ -3,7 +3,7 @@ import React from 'react'
 import ProfileAvatar from '../assets/images/default_avatar.jpg'
 import ProfileBackground from '../assets/images/default_wallpaper.jpg'
 
-const UserInfo = () => {
+const UserProfile = () => {
   return (
     <section>
       <article>
@@ -27,4 +27,4 @@ const UserInfo = () => {
   )
 }
 
-export default UserInfo
+export default UserProfile
