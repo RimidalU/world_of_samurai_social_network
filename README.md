@@ -15,3 +15,7 @@ The application was created on the basis of the course ['Way of the Samurai' of 
 npm install
 npm start
 ```
+```
+email: free@samuraijs.com
+password: free
+```
