@@ -4,6 +4,7 @@
 	--secondary: #f39845;
 	--background: #e7cca1;
 	--font: #2b201e;
+	--white: #fff;
 }
 
 @font-face {
@@ -22,5 +23,5 @@ body {
 	font-family: -apple-system, BlinkMacSystemFont, 'Samurai', 'Segoe UI', 'Roboto', 'Oxygen',
 		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 	color: var(--font);
-	background-color: var(--primary) ;
+	background-color: var(--primary);
 }

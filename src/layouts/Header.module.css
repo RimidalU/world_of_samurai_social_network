@@ -1,0 +1,13 @@
+.header {
+	grid-area: header;
+	background-color: var(--background);
+	color: var(--primary);
+	font-size: small;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.logo {
+	width: 100px;
+}

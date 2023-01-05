@@ -9,25 +9,4 @@
 	gap: 20px;
 	margin: 0 auto;
 }
-.header {
-	grid-area: header;
-  background-color: var(--background);
-  color: var(--primary);
-  font-size:small;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.aside {
-	grid-area: aside;
-	background-color: var(--background);
-}
-.main {
-	grid-area: main;
-}
 
-.footer{
-	grid-area: footer;
-	background-color: var(--background);
-  color: var(--primary);
-}
