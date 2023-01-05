@@ -1,3 +1,5 @@
+import React from 'react'
+
 import AddPost from './AddPost'
 import Post from '../components/Post'
 

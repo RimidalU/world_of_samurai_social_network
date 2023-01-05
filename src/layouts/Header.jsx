@@ -1,3 +1,5 @@
+import React from 'react'
+
 import LogoIcon from '../assets/images/logo_samurai.png'
 
 const Header = () => {
