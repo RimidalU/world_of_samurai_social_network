@@ -1,6 +1,6 @@
 import React from 'react'
 
-import LogoIcon from '../assets/images/logo_samurai.png'
+import LogoIcon from '../../assets/images/logo_samurai.png'
 
 import styles from './Header.module.css'
 

@@ -1,7 +1,7 @@
 import React from 'react'
 
-import ProfileAvatar from '../assets/images/default_avatar.jpg'
-import ProfileBackground from '../assets/images/default_wallpaper.jpg'
+import ProfileAvatar from '../../assets/images/default_avatar.jpg'
+import ProfileBackground from '../../assets/images/default_wallpaper.jpg'
 
 import styles from './UserProfile.module.css'
 

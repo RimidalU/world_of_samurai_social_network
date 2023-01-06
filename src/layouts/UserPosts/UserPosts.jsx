@@ -1,7 +1,7 @@
 import React from 'react'
 
-import AddPost from './AddPost'
-import Post from '../components/Post'
+import AddPost from '../AddPost/AddPost'
+import Post from '../../components/Post/Post'
 
 // import styles from './UserPosts.module.css'
 

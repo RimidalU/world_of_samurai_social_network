@@ -1,14 +1,14 @@
 import React from 'react'
 
-import UserInfo from '../layouts/UserProfile'
-import UserPosts from '../layouts/UserPosts'
+import UserProfile from '../../layouts/UserProfile/UserProfile'
+import UserPosts from '../../layouts/UserPosts/UserPosts'
 
 import styles from './ProfilePage.module.css'
 
 const ProfilePage = () => {
   return (
     <main className={styles.main}>
-      <UserInfo />
+      <UserProfile />
       <UserPosts />
     </main>
   )
