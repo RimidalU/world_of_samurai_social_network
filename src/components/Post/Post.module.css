@@ -1,0 +1,23 @@
+.avatar {
+	width: 70px;
+	border-radius: 50%;
+	border: 1px solid var(--white);
+	box-shadow: 0 0 20px var(--secondary);
+	margin-right:-30px;
+	position: relative;
+	left: -60px;
+}
+
+.wrapper {
+	align-items: center;
+	display: flex;
+	background-color: var(--background);
+	margin-bottom: 10px;
+	margin-left: 60px;
+	position: relative;
+	border-radius: 10px;
+	/* color: var(--primary); */
+}
+
+.message {
+}

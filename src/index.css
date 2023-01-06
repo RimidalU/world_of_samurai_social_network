@@ -12,6 +12,11 @@
 	src: local('Samurai'), url('../src/assets/fonts/samurai.ttf');
 }
 
+ul {
+	margin: 0;
+	padding: 0;
+}
+
 li {
 	list-style-type: none;
 }

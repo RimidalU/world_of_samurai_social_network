@@ -1,11 +1,13 @@
 import React from 'react'
 
-// import styles from './Post.module.css'
+import unknownAvatar from '../../assets/images/unknown_avatar.png'
+import styles from './Post.module.css'
 
 const Post = () => {
   return (
-    <li>
-      Post1
+    <li className={styles.wrapper}>
+      <img src={unknownAvatar} alt='user avatar' className={styles.avatar} />
+      <span >Post 1</span>
     </li>
   )
 }
