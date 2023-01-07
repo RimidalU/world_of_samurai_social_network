@@ -14,8 +14,10 @@ function App() {
     <div className='App'>
       <Header />
       <MenuSidebar />
-      <ProfilePage />
-      {/* <MessagingPage /> */}
+      <main className='main'>
+        <ProfilePage />
+        {/* <MessagingPage /> */}
+      </main>
       <Sidebar />
       <Footer />
     </div>

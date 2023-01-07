@@ -1,5 +1,6 @@
 .App {
 	display: grid;
+	max-width: 1920px;
 	grid-template-rows: 70px 11fr 1fr;
 	grid-template-columns: 2fr 10fr;
 	grid-template-areas:
@@ -8,4 +9,8 @@
 		'footer footer footer';
 	gap: 20px;
 	margin: 0 auto;
+}
+
+.main {
+	grid-area: main;
 }
