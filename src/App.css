@@ -3,10 +3,9 @@
 	grid-template-rows: 70px 11fr 1fr;
 	grid-template-columns: 2fr 10fr;
 	grid-template-areas:
-		'header header'
-		'aside main'
-		'footer footer';
+		'header header header'
+		'menu-aside main aside'
+		'footer footer footer';
 	gap: 20px;
 	margin: 0 auto;
 }
-
