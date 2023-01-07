@@ -5,7 +5,7 @@ import React from 'react'
 const MessagingPage = () => {
   return (
     <>
-      MessagingPage
+      Messaging Page
     </>
   )
 }

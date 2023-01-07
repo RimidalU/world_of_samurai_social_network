@@ -7,7 +7,7 @@ const AddPost = () => {
     <div className={styles.wrapper}>
       <form >
         <p>
-          <label for="addPost">
+          <label htmlFor="addPost">
             Add new post
           </label>
         </p>
