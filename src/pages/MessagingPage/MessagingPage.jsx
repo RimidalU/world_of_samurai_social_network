@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import Message from '../../components/Message/Message'
+import UserShortInfo from '../../components/UserShortInfo/UserShortInfo'
 
 import styles from './MessagingPage.module.css'
 
@@ -10,20 +11,20 @@ const MessagingPage = () => {
       <ul className={styles.dialogs}>
         <li>
           <NavLink to='/messaging/1'>
-            User 1
+            <UserShortInfo user='Den' />
           </NavLink>
         </li>
         <li className='active'>
           <NavLink to='/messaging/2'>
-            User 2
+            <UserShortInfo user='Bob' />
           </NavLink>        </li>
         <li>
           <NavLink to='/messaging/3'>
-            User 3
+            <UserShortInfo user='Carolina' />
           </NavLink>        </li>
         <li>
           <NavLink to='/messaging/4'>
-            User 4
+            <UserShortInfo user='Emma'/>
           </NavLink>        </li>
       </ul>
       <ul>
