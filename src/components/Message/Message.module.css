@@ -18,7 +18,7 @@
 
 .message {
 	padding-left: 0.7vw;
-	font-size: xx-small;
+	font-size: x-small;
 }
 
 .date {
@@ -28,6 +28,6 @@
 	background-color: var(--background);
 	border-radius: 5px;
 	padding: 2px;
-	font-size: 5px;
+	font-size: xx-small;
 	border: 1px solid var(--secondary);
 }
