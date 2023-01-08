@@ -1,0 +1,11 @@
+.wrapper{
+  display: grid;
+	grid-template-columns: 2fr 10fr;
+  gap: 0.8vw;
+}
+
+.dialogs{
+	background-color: var(--background);
+	border-radius: 10px;
+  padding: 0.5vw;
+}

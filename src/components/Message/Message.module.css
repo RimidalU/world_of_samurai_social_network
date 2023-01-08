@@ -1,0 +1,21 @@
+.avatar {
+	max-width: 2vw;
+	border-radius: 50%;
+	border: 1px solid var(--white);
+	box-shadow: 0 0 20px var(--secondary);
+	margin-left: -1.7vw;
+}
+
+.wrapper {
+	align-items: center;
+	display: flex;
+	background-color: var(--background);
+	margin-bottom: 10px;
+	border-radius: 5px;
+	margin-left: 2vw;
+}
+
+.message {
+	padding-left: 1.7vw;
+	font-size: xx-small;
+}
