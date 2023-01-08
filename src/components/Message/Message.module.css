@@ -6,16 +6,6 @@
 	margin-left: -1.7vw;
 }
 
-.wrapper {
-	align-items: center;
-	position: relative;
-	display: flex;
-	background-color: var(--background);
-	margin-bottom: 10px;
-	border-radius: 5px;
-	margin-left: 2vw;
-}
-
 .message {
 	padding-left: 0.7vw;
 	font-size: x-small;
@@ -24,7 +14,7 @@
 .date {
 	position: absolute;
 	right: -0.7vw;
-	bottom: -0.5vw;
+	bottom: -0.4vw;
 	background-color: var(--background);
 	border-radius: 5px;
 	padding: 2px;
