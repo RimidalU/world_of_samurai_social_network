@@ -1,10 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-
 import styles from './MenuSidebar.module.css'
-
-const activeStyle = ({ isActive }) => ({ color: isActive ? 'var(--danger)' : 'var(--primary)' })
 
 const MenuSidebar = () => {
   return (
@@ -12,19 +9,29 @@ const MenuSidebar = () => {
       <nav>
         <ul className={styles.links}>
           <li>
-            <NavLink to="/" style={activeStyle}>Profile</NavLink>
+            <NavLink to='/'>
+              Profile
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/messaging" style={activeStyle}>Messaging</NavLink>
+            <NavLink to='/messaging'>
+              Messaging
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/news" style={activeStyle}>News</NavLink>
+            <NavLink to='/news'>
+              News
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/music" style={activeStyle}>Music</NavLink>
+            <NavLink to='/music'>
+              Music
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/settings" style={activeStyle}>Settings</NavLink>
+            <NavLink to='/settings'>
+              Settings
+            </NavLink>
           </li>
         </ul>
       </nav>

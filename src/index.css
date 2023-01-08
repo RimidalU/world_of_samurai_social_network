@@ -12,6 +12,16 @@
 	src: local('Samurai'), url('../src/assets/fonts/samurai.ttf');
 }
 
+body {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Samurai', 'Segoe UI', 'Roboto', 'Oxygen',
+		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	color: var(--font);
+	background-color: var(--primary);
+}
+
 ul {
 	margin: 0;
 	padding: 0;
@@ -21,12 +31,10 @@ li {
 	list-style-type: none;
 }
 
-body {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-	font-family: -apple-system, BlinkMacSystemFont, 'Samurai', 'Segoe UI', 'Roboto', 'Oxygen',
-		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-	color: var(--font);
-	background-color: var(--primary);
+a {
+	text-decoration: none;
+}
+
+.active {
+	color: var(--danger);
 }
