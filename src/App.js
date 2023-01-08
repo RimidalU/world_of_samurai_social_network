@@ -22,7 +22,7 @@ function App() {
       <main className='main'>
         <Routes>
           <Route path="/" element={<ProfilePage />} />
-          <Route path="/messaging" element={<MessagingPage />} />
+          <Route path="/messaging/*" element={<MessagingPage />} />
           <Route path="/news" element={<NewsPage />} />
           <Route path="/music" element={<MusicPage />} />
           <Route path="/settings" element={<SettingsPage />} />

@@ -8,6 +8,7 @@
 
 .wrapper {
 	align-items: center;
+	position: relative;
 	display: flex;
 	background-color: var(--background);
 	margin-bottom: 10px;
@@ -16,6 +17,17 @@
 }
 
 .message {
-	padding-left: 1.7vw;
+	padding-left: 0.7vw;
 	font-size: xx-small;
+}
+
+.date {
+	position: absolute;
+	right: -0.7vw;
+	bottom: -0.5vw;
+	background-color: var(--background);
+	border-radius: 5px;
+	padding: 2px;
+	font-size: 5px;
+	border: 1px solid var(--secondary);
 }
