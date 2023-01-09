@@ -1,14 +1,22 @@
 import React from 'react'
 
-import unknownAvatar from '../../assets/images/unknown_avatar.png'
+import likeIcon from '../../assets/images/like.png'
 import styles from './Post.module.css'
 
-const Post = () => {
+const Post = ({ message, date, likeCount = 0 }) => {
+
+  const timeElapsed = Date.now()
+  const today = new Date(timeElapsed).toDateString()
+
   return (
-    <li className={styles.wrapper}>
-      <img src={unknownAvatar} alt='user avatar' className={styles.avatar} />
-      <span >Post 1</span>
-    </li>
+    <>
+      <div className={styles.date}>{date ?? today}</div>
+      <span >{message}</span>
+      <div className={styles.likeWrapper}>
+        <img src={likeIcon} alt='like icon' className={styles.likeIcon} />
+        <span>{likeCount}</span>
+      </div>
+    </>
   )
 }
 

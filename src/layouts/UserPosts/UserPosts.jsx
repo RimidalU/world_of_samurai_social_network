@@ -1,23 +1,15 @@
 import React from 'react'
 
 import AddPost from '../AddPost/AddPost'
-import Post from '../../components/Post/Post'
+import PostsSet from '../../components/PostsSet/PostsSet'
 
-// import styles from './UserPosts.module.css'
+import styles from './UserPosts.module.css'
 
-const UserPosts = () => {
+function UserPosts() {
   return (
-    <section>
-      posts
+    <section className={styles.wrapper}>
       <AddPost />
-      <div>
-        posts
-        <ul>
-          <Post />
-          <Post />
-          <Post />
-        </ul>
-      </div>
+      <PostsSet />
     </section>
   )
 }
