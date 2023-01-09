@@ -5,11 +5,11 @@ import Dialogs from '../../components/Dialogs/Dialogs'
 
 import styles from './MessagingPage.module.css'
 
-const MessagingPage = () => {
+const MessagingPage = ({ penfriends, correspondence }) => {
   return (
     <div className={styles.wrapper}>
-      <Dialogs />
-      <Correspondence />
+      <Dialogs penfriends={penfriends} />
+      <Correspondence correspondence={correspondence} />
     </div >
   )
 }

@@ -14,15 +14,15 @@ import UnavailablePage from './pages/UnavailablePage/UnavailablePage'
 
 import './App.css'
 
-function App() {
+function App({ posts, penfriends, correspondence }) {
   return (
     <div className='App'>
       <Header />
       <MenuSidebar />
       <main className='main'>
         <Routes>
-          <Route path="/" element={<ProfilePage />} />
-          <Route path="/messaging/*" element={<MessagingPage />} />
+          <Route path="/" element={<ProfilePage posts={posts} />} />
+          <Route path="/messaging/*" element={<MessagingPage penfriends={penfriends} correspondence={correspondence} />} />
           <Route path="/news" element={<NewsPage />} />
           <Route path="/music" element={<MusicPage />} />
           <Route path="/settings" element={<SettingsPage />} />

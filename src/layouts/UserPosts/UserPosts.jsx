@@ -5,11 +5,11 @@ import PostsSet from '../../components/PostsSet/PostsSet'
 
 import styles from './UserPosts.module.css'
 
-function UserPosts() {
+function UserPosts({ posts }) {
   return (
     <section className={styles.wrapper}>
       <AddPost />
-      <PostsSet />
+      <PostsSet posts={posts} />
     </section>
   )
 }
