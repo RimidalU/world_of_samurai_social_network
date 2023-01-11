@@ -1,13 +1,12 @@
 import React from 'react'
 
+import { getDateNowInString } from '../../helpers'
+
 import likeIcon from '../../assets/images/like.png'
 import styles from './Post.module.css'
 
 const Post = ({ message, date, likeCount = 0 }) => {
-
-  const timeElapsed = Date.now()
-  const today = new Date(timeElapsed).toDateString()
-
+  const today = getDateNowInString()
   return (
     <>
       <div className={styles.date}>{date ?? today}</div>

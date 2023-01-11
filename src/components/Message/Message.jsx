@@ -1,13 +1,12 @@
 import React from 'react'
 
+import { getDateNowInString } from '../../helpers'
+
 import unknownAvatar from '../../assets/images/unknown_avatar.png'
 import styles from './Message.module.css'
 
 const Message = ({ avatar = unknownAvatar, message, date }) => {
-
-  const timeElapsed = Date.now()
-  const today = new Date(timeElapsed).toDateString()
-
+  const today = getDateNowInString()
   return (
     <>
       <img src={avatar} alt='user avatar' className={styles.avatar} />
