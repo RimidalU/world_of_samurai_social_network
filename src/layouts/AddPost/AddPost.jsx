@@ -9,7 +9,7 @@ const AddPost = ({ addPostToState, newPostText, updatePostText }) => {
 const textarea = React.createRef()
 
   function createPost() {
-    addPostToState(textarea.current.value)
+    addPostToState()
     removePost()
   }
 

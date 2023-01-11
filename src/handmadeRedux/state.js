@@ -96,12 +96,12 @@ let state = {
 
 window.state=state
 
-export const addPostToState = (postMessage) => {
+export const addPostToState = () => {
   const today = getDateNowInString()
   const postsLength = state.profilePage.posts.length
   const newPost = {
     id: postsLength + 1,
-    message: postMessage,
+    message: state.profilePage.newPostText,
     date: today,
     likeCount: 0
   }
@@ -115,12 +115,12 @@ export const updatePostText = (newPostText) => {
   renderTree(state)
 }
 
-export const addMessageToState = (textMessage) => {
+export const addMessageToState = () => {
   const today = getDateNowInString()
   const messagesLength = state.messagingPage.correspondence.length
   const newMessage = {
     id: messagesLength + 1,
-    message: textMessage,
+    message: state.messagingPage.newMessageText,
     date: today,
     avatar: `${require('../assets/images/default_avatar.jpg')}`
   }
