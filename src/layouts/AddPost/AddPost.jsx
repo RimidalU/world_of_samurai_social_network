@@ -4,17 +4,21 @@ import Textarea from '../../components/Textarea/Textarea'
 
 import styles from './AddPost.module.css'
 
+const AddPost = ({ addPostToState, newPostText, updatePostText }) => {
+
 const textarea = React.createRef()
 
-const AddPost = () => {
-
-  function addPost() {
-    alert(textarea.current.value)
+  function createPost() {
+    addPostToState(textarea.current.value)
     removePost()
   }
 
   function removePost() {
-    textarea.current.value = ''
+    updatePostText('')
+  }
+
+  function changePostText() {
+    updatePostText(textarea.current.value)
   }
 
   return (
@@ -23,12 +27,14 @@ const AddPost = () => {
         refer={textarea}
         placeholder='Add thought'
         id='addPost'
+        value={newPostText}
+        onChange={changePostText}
       />
       <span className={styles.buttonWrapper}>
         <Button onClick={removePost} >
           Erase stupidity
         </Button>
-        <Button onClick={addPost}>
+        <Button onClick={createPost}>
           Declare wisdom
         </Button>
       </span>

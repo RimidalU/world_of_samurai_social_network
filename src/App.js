@@ -14,15 +14,25 @@ import UnavailablePage from './pages/UnavailablePage/UnavailablePage'
 
 import './App.css'
 
-function App({ state }) {
+function App({ state, addPostToState, updatePostText, addMessageToState, updateMessageText }) {
   return (
     <div className='App'>
       <Header />
       <MenuSidebar />
       <main className='main'>
         <Routes>
-          <Route path="/" element={<ProfilePage state={state.profilePage} />} />
-          <Route path="/messaging/*" element={<MessagingPage state={state.messagingPage} />} />
+          <Route path="/" element={<ProfilePage
+            state={state.profilePage}
+            addPostToState={addPostToState}
+            updatePostText={updatePostText}
+          />}
+          />
+          <Route path="/messaging/*" element={<MessagingPage
+            state={state.messagingPage}
+            addMessageToState={addMessageToState}
+            updateMessageText={updateMessageText}
+          />}
+          />
           <Route path="/news" element={<NewsPage />} />
           <Route path="/music" element={<MusicPage />} />
           <Route path="/settings" element={<SettingsPage />} />

@@ -5,10 +5,10 @@ import PostsSet from '../../components/PostsSet/PostsSet'
 
 import styles from './UserPosts.module.css'
 
-function UserPosts({ posts }) {
+function UserPosts({ posts, addPostToState, newPostText, updatePostText }) {
   return (
     <section className={styles.wrapper}>
-      <AddPost />
+      <AddPost addPostToState={addPostToState} newPostText={newPostText} updatePostText={updatePostText} />
       <PostsSet posts={posts} />
     </section>
   )
