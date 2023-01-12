@@ -10,7 +10,7 @@ const Dialogs = ({ penfriends }) => {
   return (
     <ul className={styles.dialogs}>
       {
-        penfriends().map(friend => (
+        penfriends.map(friend => (
           <li key={friend.id}>
             <NavLink to={`/messaging/${friend.id}`}>
               <UserShortInfo {...friend} />

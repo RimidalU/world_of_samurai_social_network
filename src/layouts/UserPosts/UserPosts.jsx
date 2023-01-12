@@ -1,16 +1,15 @@
 import React from 'react'
 
-import AddPost from '../AddPost/AddPost'
+import AddNote from '../AddNote/AddNote'
 import PostsSet from '../../components/PostsSet/PostsSet'
 
 import styles from './UserPosts.module.css'
 
-function UserPosts({ store }) {
-  let { addPostToState, updatePostText, getPosts, getNewPostText } = store
+function UserPosts({ state, dispatch }) {
   return (
     <section className={styles.wrapper}>
-      <AddPost addPostToState={addPostToState.bind(store)} updatePostText={updatePostText.bind(store)} newPostText={getNewPostText.bind(store)} />
-      <PostsSet posts={getPosts.bind(store)} />
+      <AddNote componentType='post' dispatch={dispatch} newNoteText={state.newPostText} />
+      <PostsSet posts={state.posts} />
     </section>
   )
 }

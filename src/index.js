@@ -11,16 +11,16 @@ import './index.css'
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
 
-let renderTree = (store) => {
+let renderTree = (state) => {
   root.render(
     <React.StrictMode>
       <BrowserRouter>
-        <App store={store} />
+        <App state={state} dispatch={store.dispatch.bind(store)} />
       </BrowserRouter>
     </React.StrictMode>
   )
 }
 
-renderTree(store)
+renderTree(store.getState())
 
 store.subscribe(renderTree)

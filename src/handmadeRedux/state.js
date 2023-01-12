@@ -1,5 +1,6 @@
 
 import { getDateNowInString } from '../helpers'
+import { ADD_MESSAGE, ADD_POST, UPDATE_MESSAGE, UPDATE_POST } from './actions'
 
 let store = {
   _callSubscriber() { },
@@ -98,8 +99,10 @@ let store = {
   subscribe(observer) {
     this._callSubscriber = observer
   },
+  getState() { return this._state },
 
-  addPostToState() {
+
+  _addPost() {
     const today = getDateNowInString()
     const postsLength = this._state.profilePage.posts.length
     const newPost = {
@@ -110,9 +113,9 @@ let store = {
     }
 
     this._state.profilePage.posts.push(newPost)
-    this._callSubscriber(this)
+    this._callSubscriber(this._state)
   },
-  addMessageToState() {
+  _addMessage() {
     const today = getDateNowInString()
     const messagesLength = this._state.messagingPage.correspondence.length
     const newMessage = {
@@ -123,22 +126,36 @@ let store = {
     }
 
     this._state.messagingPage.correspondence.push(newMessage)
-    this._callSubscriber(this)
+    this._callSubscriber(this._state)
   },
-  updatePostText(newPostText) {
-    this._state.profilePage.newPostText = newPostText
-    this._callSubscriber(this)
+  _updatePost(newNote) {
+    this._state.profilePage.newPostText = newNote
+    this._callSubscriber(this._state)
   },
-  updateMessageText(newMessageText) {
-    this._state.messagingPage.newMessageText = newMessageText
-    this._callSubscriber(this)
+  _updateMessage(newNote) {
+    this._state.messagingPage.newMessageText = newNote
+    this._callSubscriber(this._state)
   },
 
-  getPosts() { return this._state.profilePage.posts },
-  getCorrespondence() { return this._state.messagingPage.correspondence },
-  getPenfriends() { return this._state.messagingPage.penfriends },
-  getNewPostText() { return this._state.profilePage.newPostText },
-  getNewMessageText() { return this._state.messagingPage.newMessageText }
+  dispatch(action) {
+    switch (action.type) {
+      case ADD_POST:
+        this._addPost()
+        break
+      case ADD_MESSAGE:
+        this._addMessage()
+        break
+      case UPDATE_POST:
+        this._updatePost(action.newNote)
+        break
+      case UPDATE_MESSAGE:
+        this._updateMessage(action.newNote)
+        break
+      default:
+        this.getState()
+        break
+    }
+  }
 }
 
 window.state = store
