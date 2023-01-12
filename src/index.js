@@ -1,25 +1,26 @@
-import state from './handmadeRedux/state'
-import renderTree from './render'
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { BrowserRouter } from 'react-router-dom'
 
-renderTree(state)
+import App from './App'
 
-// import React from 'react'
-// import ReactDOM from 'react-dom/client'
-// import { BrowserRouter } from 'react-router-dom'
+import store from './handmadeRedux/state'
 
-// import App from './App'
+import './index.css'
 
-// import state from './handmadeRedux/state'
-// import { addPost } from './handmadeRedux/state'
+const root = ReactDOM.createRoot(document.getElementById('root'))
 
-// import './index.css'
 
-//   const root = ReactDOM.createRoot(document.getElementById('root'))
-//   root.render(
-//     <React.StrictMode>
-//       <BrowserRouter>
-//         <App state={state} addPost={addPost} />
-//       </BrowserRouter>
-//     </React.StrictMode>
-//   )
+let renderTree = (store) => {
+  root.render(
+    <React.StrictMode>
+      <BrowserRouter>
+        <App store={store} />
+      </BrowserRouter>
+    </React.StrictMode>
+  )
+}
 
+renderTree(store)
+
+store.subscribe(renderTree)

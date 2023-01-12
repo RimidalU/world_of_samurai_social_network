@@ -5,11 +5,12 @@ import Dialogs from '../../components/Dialogs/Dialogs'
 
 import styles from './MessagingPage.module.css'
 
-const MessagingPage = ({ state, addMessageToState, updateMessageText }) => {
+const MessagingPage = ({ store }) => {
+  const penfriends = store.getPenfriends.bind(store)
   return (
     <div className={styles.wrapper}>
-      <Dialogs penfriends={state.penfriends} />
-      <Correspondence correspondence={state.correspondence} newMessageText={state.newMessageText} addMessageToState={addMessageToState} updateMessageText={updateMessageText} />
+      <Dialogs penfriends={penfriends} />
+      <Correspondence store={store} />
     </div >
   )
 }

@@ -8,7 +8,7 @@ const PostsSet = ({ posts }) => {
   return (
     <ul className={styles.wrapper}>
       {
-        posts.map(post => (
+        posts().map(post => (
           <li key={post.id} className={styles.post}>
             <Post {...post} />
           </li>

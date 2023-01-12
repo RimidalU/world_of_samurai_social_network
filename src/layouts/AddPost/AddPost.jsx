@@ -5,8 +5,8 @@ import Textarea from '../../components/Textarea/Textarea'
 import styles from './AddPost.module.css'
 
 const AddPost = ({ addPostToState, newPostText, updatePostText }) => {
-
-const textarea = React.createRef()
+  const textarea = React.createRef()
+  const postText = newPostText()
 
   function createPost() {
     addPostToState()
@@ -27,7 +27,7 @@ const textarea = React.createRef()
         refer={textarea}
         placeholder='Add thought'
         id='addPost'
-        value={newPostText}
+        value={postText}
         onChange={changePostText}
       />
       <span className={styles.buttonWrapper}>
@@ -39,7 +39,6 @@ const textarea = React.createRef()
         </Button>
       </span>
     </form>
-    // </div>
   )
 }
 
