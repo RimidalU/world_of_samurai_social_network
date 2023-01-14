@@ -1,14 +1,14 @@
 import React from 'react'
 
 import Correspondence from '../../components/Correspondence/Correspondence'
-import Dialogs from '../../components/Dialogs/Dialogs'
+import Penfriends from '../../components/Penfriends/Penfriends'
 
 import styles from './MessagingPage.module.css'
 
-const MessagingPage = ({ store }) => {
+const MessagingPage = (store) => {
   return (
     <div className={styles.wrapper}>
-      <Dialogs store={store} />
+      <Penfriends store={store}/>
       <Correspondence store={store} />
     </div >
   )

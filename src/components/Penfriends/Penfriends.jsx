@@ -4,14 +4,14 @@ import { NavLink } from 'react-router-dom'
 
 import UserShortInfo from '../UserShortInfo/UserShortInfo'
 
-import styles from './Dialogs.module.css'
+import styles from './Penfriends.module.css'
 
-const Dialogs = ({ store }) => {
+const Penfriends = ({ store }) => {
 
   const penfriends = store.getState().messagingPage.penfriends
 
   return (
-    <ul className={styles.dialogs}>
+    <ul className={styles.wrapper}>
       {
         penfriends.map(friend => (
           <li key={friend.id}>
@@ -25,4 +25,4 @@ const Dialogs = ({ store }) => {
   )
 }
 
-export default Dialogs
+export default Penfriends
