@@ -13,6 +13,10 @@ const AddNote = ({ addNote, changeNote, removeNote, newNoteText }) => {
     removeNote()
   }
 
+  function clearNote() {
+    removeNote()
+  }
+
   function changeNoteText() {
     changeNote(textarea.current.value)
   }
@@ -27,7 +31,7 @@ const AddNote = ({ addNote, changeNote, removeNote, newNoteText }) => {
         onChange={changeNoteText}
       />
       <span className={styles.buttonWrapper}>
-        <Button onClick={removeNote} >
+        <Button onClick={clearNote} >
           Erase stupidity
         </Button>
         <Button onClick={createNote}>

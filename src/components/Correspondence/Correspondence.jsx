@@ -1,17 +1,25 @@
 import React from 'react'
+
 import AddNoteContainer from '../../layouts/AddNote/AddNoteContainer'
+import { StoreContext } from '../../StoreContext'
 import CorrespondenceSet from '../CorrespondenceSet/CorrespondenceSet'
 
 import styles from './Correspondence.module.css'
 
-const Correspondence = ({ store }) => {
-  const correspondence = store.getState().messagingPage.correspondence
+const Correspondence = () => {
   return (
     <div className={styles.wrapper}>
-      <AddNoteContainer componentType='message' store={store} />
-      <CorrespondenceSet correspondence={correspondence} />
-    </div>
+      <AddNoteContainer componentType='message' />
 
+      <StoreContext.Consumer>
+        {(store) => {
+          const correspondence = store.getState().messagingPage.correspondence
+
+          return <CorrespondenceSet correspondence={correspondence} />
+        }}
+      </StoreContext.Consumer>
+
+    </div>
   )
 }
 

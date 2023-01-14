@@ -6,9 +6,7 @@ import UserShortInfo from '../UserShortInfo/UserShortInfo'
 
 import styles from './Penfriends.module.css'
 
-const Penfriends = ({ store }) => {
-
-  const penfriends = store.getState().messagingPage.penfriends
+const Penfriends = ({penfriends}) => {
 
   return (
     <ul className={styles.wrapper}>
