@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 
 import App from './App'
-import { StoreContext } from './StoreContext'
+import { Provider } from './StoreContext'
 
 import store from './redux/store'
 
@@ -16,9 +16,9 @@ let renderTree = () => {
   root.render(
     <React.StrictMode>
       <BrowserRouter>
-        <StoreContext.Provider value={store}>
+        <Provider store={store}>
           <App />
-        </StoreContext.Provider>
+        </Provider>
       </BrowserRouter>
     </React.StrictMode>
   )
