@@ -5,6 +5,7 @@ import Post from '../Post/Post'
 import styles from './PostsSet.module.css'
 
 const PostsSet = ({ posts }) => {
+
   return (
     <ul className={styles.wrapper}>
       {

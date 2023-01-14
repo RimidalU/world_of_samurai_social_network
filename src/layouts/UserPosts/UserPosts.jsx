@@ -1,15 +1,16 @@
 import React from 'react'
 
-import AddNote from '../AddNote/AddNote'
 import PostsSet from '../../components/PostsSet/PostsSet'
 
 import styles from './UserPosts.module.css'
+import AddNoteContainer from '../AddNote/AddNoteContainer'
 
-function UserPosts({ state, dispatch }) {
+function UserPosts({ store }) {
+  const posts = store.getState().profilePage.posts
   return (
     <section className={styles.wrapper}>
-      <AddNote componentType='post' dispatch={dispatch} newNoteText={state.newPostText} />
-      <PostsSet posts={state.posts} />
+      <AddNoteContainer componentType='post' store={store} />
+      <PostsSet posts={posts} />
     </section>
   )
 }

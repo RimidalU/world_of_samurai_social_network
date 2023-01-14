@@ -2,38 +2,19 @@ import React from 'react'
 
 import Button from '../../components/Button/Button'
 import Textarea from '../../components/Textarea/Textarea'
-import { addPost, addMessage, updatePost, updateMessage } from '../../handmadeRedux/actionCreator'
 
 import styles from './AddNote.module.css'
 
-const AddNote = ({ componentType, newNoteText, dispatch }) => {
+const AddNote = ({ addNote, changeNote, removeNote, newNoteText }) => {
   const textarea = React.createRef()
 
-  let addActionCreator, updateActionCreator
-
-  switch (componentType) {
-    case 'post':
-      addActionCreator = addPost
-      updateActionCreator = updatePost
-      break
-    default:
-      addActionCreator = addMessage
-      updateActionCreator = updateMessage
-      break
-  }
-
-
   function createNote() {
-    dispatch(addActionCreator())
+    addNote()
     removeNote()
   }
 
-  function removeNote() {
-    dispatch(updateActionCreator(''))
-  }
-
   function changeNoteText() {
-    dispatch(updateActionCreator(textarea.current.value))
+    changeNote(textarea.current.value)
   }
 
   return (

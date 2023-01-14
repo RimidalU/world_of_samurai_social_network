@@ -14,15 +14,15 @@ import UnavailablePage from './pages/UnavailablePage/UnavailablePage'
 
 import './App.css'
 
-function App({ state, dispatch }) {
+function App({ store }) {
   return (
     <div className='App'>
       <Header />
       <MenuSidebar />
       <main className='main'>
         <Routes>
-          <Route path="/" element={<ProfilePage state={state.profilePage} dispatch={dispatch} />} />
-          <Route path="/messaging/*" element={<MessagingPage state={state.messagingPage} dispatch={dispatch} />} />
+          <Route path="/" element={<ProfilePage store={store} />} />
+          <Route path="/messaging/*" element={<MessagingPage store={store} />} />
           <Route path="/news" element={<NewsPage />} />
           <Route path="/music" element={<MusicPage />} />
           <Route path="/settings" element={<SettingsPage />} />

@@ -1,17 +1,18 @@
 import React from 'react'
-import AddNote from '../../layouts/AddNote/AddNote'
+import AddNoteContainer from '../../layouts/AddNote/AddNoteContainer'
 
 import Message from '../Message/Message'
 
 import styles from './Correspondence.module.css'
 
-const Correspondence = ({ state, dispatch }) => {
+const Correspondence = ({store}) => {
+  const correspondence = store.getState().messagingPage.correspondence
   return (
     <div className={styles.wrapper}>
-      <AddNote componentType='message' dispatch={dispatch} newNoteText={state.newMessageText} />
+      <AddNoteContainer componentType='message' store={store} />
       <ul className={styles.dialogs}>
         {
-          state.correspondence.map(message => (
+          correspondence.map(message => (
             <li key={message.id} className={styles.messageWrapper}>
               <Message {...message} />
             </li>

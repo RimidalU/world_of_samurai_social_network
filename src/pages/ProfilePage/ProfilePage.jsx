@@ -5,11 +5,11 @@ import UserPosts from '../../layouts/UserPosts/UserPosts'
 
 // import styles from './ProfilePage.module.css'
 
-const ProfilePage = ({ state, dispatch }) => {
+const ProfilePage = ({ store }) => {
   return (
     <>
       <UserProfile />
-      <UserPosts state={state} dispatch={dispatch} />
+      <UserPosts store={store} />
     </>
   )
 }

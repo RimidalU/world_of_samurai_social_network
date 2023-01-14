@@ -6,7 +6,10 @@ import UserShortInfo from '../UserShortInfo/UserShortInfo'
 
 import styles from './Dialogs.module.css'
 
-const Dialogs = ({ penfriends }) => {
+const Dialogs = ({ store }) => {
+
+  const penfriends = store.getState().messagingPage.penfriends
+
   return (
     <ul className={styles.dialogs}>
       {
