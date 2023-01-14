@@ -1,7 +1,10 @@
+import initialState from '../redux/initialState'
+
 import { ADD_MESSAGE, UPDATE_MESSAGE } from './actions'
+
 import { getDateNowInString } from '../helpers'
 
-const messagingPageReducer = (state, action) => {
+const messagingPageReducer = (state = initialState.messagingPage, action) => {
 
   const addMessage = () => {
     const today = getDateNowInString()
@@ -12,7 +15,6 @@ const messagingPageReducer = (state, action) => {
       date: today,
       avatar: `${require('../assets/images/default_avatar.jpg')}`
     }
-
     state.correspondence.push(newMessage)
   }
 
@@ -30,7 +32,6 @@ const messagingPageReducer = (state, action) => {
     default:
       return state
   }
-
 }
 
 export default messagingPageReducer

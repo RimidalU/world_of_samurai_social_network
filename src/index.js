@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 
 import App from './App'
 
-import store from './handmadeRedux/state'
+import store from './redux/store'
 
 import './index.css'
 
@@ -23,4 +23,7 @@ let renderTree = (state) => {
 
 renderTree(store.getState())
 
-store.subscribe(renderTree)
+store.subscribe(() => {
+  let state = store.getState()
+  renderTree(state)
+})

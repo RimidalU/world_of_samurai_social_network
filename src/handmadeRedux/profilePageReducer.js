@@ -1,7 +1,8 @@
 import { ADD_POST, UPDATE_POST } from './actions'
 import { getDateNowInString } from '../helpers'
+import initialState from '../redux/initialState'
 
-const profilePageReducer = (state, action) => {
+const profilePageReducer = (state = initialState.profilePage, action) => {
 
   const addPost = () => {
     const today = getDateNowInString()
@@ -12,7 +13,6 @@ const profilePageReducer = (state, action) => {
       date: today,
       likeCount: 0
     }
-
     state.posts.push(newPost)
   }
   const updatePost = (newNote) => {
