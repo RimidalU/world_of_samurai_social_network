@@ -1,19 +1,15 @@
-import React, { useContext } from 'react'
-
-import PostsSet from '../../components/PostsSet/PostsSet'
+import React from 'react'
 
 import styles from './UserPosts.module.css'
-import { StoreContext } from '../../StoreContext'
 import AddPostContainer from '../AddNote/AddPostContainer'
+import PostsSetContainer from '../../components/PostsSet/PostsSetContainer'
 
 function UserPosts() {
-  const store = useContext(StoreContext)
-  const posts = store.getState().profilePage.posts
 
   return (
     <section className={styles.wrapper}>
       <AddPostContainer />
-      <PostsSet posts={posts} />
+      <PostsSetContainer />
     </section>
   )
 }
