@@ -3,8 +3,8 @@ import React, { useContext } from 'react'
 import PostsSet from '../../components/PostsSet/PostsSet'
 
 import styles from './UserPosts.module.css'
-import AddNoteContainer from '../AddNote/AddNoteContainer'
 import { StoreContext } from '../../StoreContext'
+import AddPostContainer from '../AddNote/AddPostContainer'
 
 function UserPosts() {
   const store = useContext(StoreContext)
@@ -12,7 +12,7 @@ function UserPosts() {
 
   return (
     <section className={styles.wrapper}>
-      <AddNoteContainer componentType='post' />
+      <AddPostContainer />
       <PostsSet posts={posts} />
     </section>
   )

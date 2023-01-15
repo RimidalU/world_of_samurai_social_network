@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 
-import AddNoteContainer from '../../layouts/AddNote/AddNoteContainer'
+import AddMessageContainer from '../../layouts/AddNote/AddMessageContainer'
 import { StoreContext } from '../../StoreContext'
 import CorrespondenceSet from '../CorrespondenceSet/CorrespondenceSet'
 
@@ -13,7 +13,7 @@ const Correspondence = () => {
 
   return (
     <div className={styles.wrapper}>
-      <AddNoteContainer componentType='message' />
+      <AddMessageContainer />
       <CorrespondenceSet correspondence={correspondence} />
     </div>
   )
