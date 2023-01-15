@@ -1,16 +1,13 @@
-import React, { useContext } from 'react'
+import { connect } from 'react-redux'
 
-import { StoreContext } from '../../StoreContext'
 import PostsSet from './PostsSet'
 
-const PostsSetContainer = () => {
-
-  const store = useContext(StoreContext)
-  const posts = store.getState().profilePage.posts
-
-  return (
-    <PostsSet posts={posts} />
-  )
+let mapStateToProps = (state) => {
+  return {
+    posts: state.profilePage.posts
+  }
 }
+
+const PostsSetContainer = connect(mapStateToProps)(PostsSet)
 
 export default PostsSetContainer
