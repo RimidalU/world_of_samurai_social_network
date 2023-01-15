@@ -8,14 +8,14 @@ const CorrespondenceSet = ({ correspondence }) => {
 
   return (
     <ul className={styles.wrapper}>
-    {
-      correspondence.map(message => (
-        <li key={message.id} className={styles.message}>
-          <Message {...message} />
-        </li>
-      ))
-    }
-  </ul >
+      {
+        correspondence.map(message => (
+          <li key={message.id} className={styles.message}>
+            <Message {...message} />
+          </li>
+        ))
+      }
+    </ul >
   )
 }
 
