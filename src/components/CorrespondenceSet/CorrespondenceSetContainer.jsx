@@ -1,17 +1,13 @@
-import React, { useContext } from 'react'
-
-import { StoreContext } from '../../StoreContext'
+import { connect } from 'react-redux'
 
 import CorrespondenceSet from './CorrespondenceSet'
 
-const CorrespondenceSetContainer = () => {
-
-  const store = useContext(StoreContext)
-  const correspondence = store.getState().messagingPage.correspondence
-
-  return (
-    <CorrespondenceSet correspondence={correspondence} />
-  )
+const mapStateToProps = (state) => {
+  return {
+    correspondence: state.messagingPage.correspondence
+  }
 }
+
+const CorrespondenceSetContainer = connect(mapStateToProps)(CorrespondenceSet)
 
 export default CorrespondenceSetContainer
