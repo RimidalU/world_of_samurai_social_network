@@ -1,4 +1,4 @@
-import initialState from '../redux/initialState'
+import initialState from './initialState'
 
 import { ADD_MESSAGE, UPDATE_MESSAGE } from './actions'
 

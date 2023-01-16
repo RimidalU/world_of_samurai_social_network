@@ -1,7 +1,7 @@
 import { combineReducers, legacy_createStore as createStore } from 'redux'
 
-import messagingPageReducer from '../handmadeRedux/messagingPageReducer'
-import profilePageReducer from '../handmadeRedux/profilePageReducer'
+import messagingPageReducer from './messagingPageReducer'
+import profilePageReducer from './profilePageReducer'
 // TODO: refactor to Redux Toolkit (https://redux.js.org/introduction/why-rtk-is-redux-today)
 
 let reducers = combineReducers(

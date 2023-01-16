@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import { addMessage, updateMessage } from '../../handmadeRedux/actionCreator'
+import { addMessage, updateMessage } from '../../redux/actionCreator'
 import AddNote from './AddNote'
 
 const mapStateToProps = (state) => {

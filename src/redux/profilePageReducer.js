@@ -1,6 +1,6 @@
 import { ADD_POST, UPDATE_POST } from './actions'
 import { getDateNowInString } from '../helpers'
-import initialState from '../redux/initialState'
+import initialState from './initialState'
 
 const profilePageReducer = (state = initialState.profilePage, action) => {
 

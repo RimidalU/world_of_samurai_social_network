@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import { addPost, updatePost } from '../../handmadeRedux/actionCreator'
+import { addPost, updatePost } from '../../redux/actionCreator'
 import AddNote from './AddNote'
 
 const mapStateToProps = (state) => {
@@ -8,6 +8,7 @@ const mapStateToProps = (state) => {
     newNoteText: state.profilePage.newPostText
   }
 }
+
 
 const mapDispatchToProps = (dispatch) => {
   return {
