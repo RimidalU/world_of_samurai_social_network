@@ -13,6 +13,7 @@ import SettingsPage from './pages/SettingsPage/SettingsPage'
 import UnavailablePage from './pages/UnavailablePage/UnavailablePage'
 
 import './App.css'
+import UsersPage from './pages/UsersPage/UsersPage'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/" element={<ProfilePage />} />
           <Route path="/messaging/*" element={<MessagingPage />} />
           <Route path="/news" element={<NewsPage />} />
+          <Route path="/users" element={<UsersPage />} />
           <Route path="/music" element={<MusicPage />} />
           <Route path="/settings" element={<SettingsPage />} />
           <Route path="*" element={<UnavailablePage />} />

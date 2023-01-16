@@ -24,6 +24,11 @@ const MenuSidebar = () => {
             </NavLink>
           </li>
           <li>
+            <NavLink to='/users'>
+              Find User
+            </NavLink>
+          </li>
+          <li>
             <NavLink to='/music'>
               Music
             </NavLink>
