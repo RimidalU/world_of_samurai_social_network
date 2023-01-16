@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 
 import PostsSet from './PostsSet'
 
-let mapStateToProps = (state) => {
+const mapStateToProps = (state) => {
   return {
     posts: state.profilePage.posts
   }
