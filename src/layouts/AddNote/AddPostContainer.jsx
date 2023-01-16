@@ -1,35 +1,29 @@
-import React, { useContext } from 'react'
+import { connect } from 'react-redux'
 
 import { addPost, updatePost } from '../../handmadeRedux/actionCreator'
-import { StoreContext } from '../../StoreContext'
 import AddNote from './AddNote'
 
-const AddPostContainer = () => {
-
-  const store = useContext(StoreContext)
-  let newNoteText = store.getState().profilePage.newPostText
-
-  function addNote() {
-    store.dispatch(addPost())
-    removeNote()
+const mapStateToProps = (state) => {
+  return {
+    newNoteText: state.profilePage.newPostText
   }
-
-  function removeNote() {
-    store.dispatch(updatePost(''))
-  }
-
-  function changeNote(noteText) {
-    store.dispatch(updatePost(noteText))
-  }
-
-  return (
-    <AddNote
-      changeNote={changeNote}
-      addNote={addNote}
-      newNoteText={newNoteText}
-      removeNote={removeNote}
-    />
-  )
 }
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addNote: () => {
+      dispatch(addPost())
+      dispatch(updatePost(''))
+    },
+    changeNote: (noteText) => {
+      dispatch(updatePost(noteText))
+    },
+    removeNote: () => {
+      dispatch(updatePost(''))
+    }
+  }
+}
+
+const AddPostContainer = connect(mapStateToProps, mapDispatchToProps)(AddNote)
 
 export default AddPostContainer

@@ -10,7 +10,7 @@ const AddNote = ({ addNote, changeNote, removeNote, newNoteText }) => {
 
   function createNote() {
     addNote()
-    removeNote()
+    // removeNote()
   }
 
   function clearNote() {
