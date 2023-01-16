@@ -1,8 +1,8 @@
-import { ADD_POST, UPDATE_POST } from './actions'
-import { getDateNowInString } from '../helpers'
-import initialState from './initialState'
+import { ADD_POST, UPDATE_POST } from '../actions/profilePageActions'
+import profilePageInitialState from '../initialStates/profilePageInitialState'
+import { getDateNowInString } from '../../helpers'
 
-const profilePageReducer = (state = initialState.profilePage, action) => {
+const profilePageReducer = (state = profilePageInitialState, action) => {
 
   const addPost = () => {
     const today = getDateNowInString()

@@ -25,7 +25,7 @@ function App() {
           <Route path="/" element={<ProfilePage />} />
           <Route path="/messaging/*" element={<MessagingPage />} />
           <Route path="/news" element={<NewsPage />} />
-          <Route path="/users" element={<UsersPage />} />
+          {/* <Route path="/users" element={<UsersPage />} /> */}
           <Route path="/music" element={<MusicPage />} />
           <Route path="/settings" element={<SettingsPage />} />
           <Route path="*" element={<UnavailablePage />} />

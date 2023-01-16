@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import { addPost, updatePost } from '../../redux/actionCreator'
+import { addPost, updatePost } from '../../redux/actionCreators/profilePageActionCreator'
 import AddNote from './AddNote'
 
 const mapStateToProps = (state) => {

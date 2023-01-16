@@ -1,10 +1,8 @@
-import initialState from './initialState'
+import { ADD_MESSAGE, UPDATE_MESSAGE } from '../actions/messagingPageActions'
+import messagingPageInitialState from '../initialStates/messagingPageInitialState'
+import { getDateNowInString } from '../../helpers'
 
-import { ADD_MESSAGE, UPDATE_MESSAGE } from './actions'
-
-import { getDateNowInString } from '../helpers'
-
-const messagingPageReducer = (state = initialState.messagingPage, action) => {
+const messagingPageReducer = (state = messagingPageInitialState, action) => {
 
   const addMessage = () => {
     const today = getDateNowInString()
@@ -13,7 +11,7 @@ const messagingPageReducer = (state = initialState.messagingPage, action) => {
       id: messagesLength + 1,
       message: state.newMessageText,
       date: today,
-      avatar: `${require('../assets/images/default_avatar.jpg')}`
+      avatar: `${require('../../assets/images/default_avatar.jpg')}`
     }
     return {
       ...state,
