@@ -13,19 +13,22 @@ const profilePageReducer = (state = initialState.profilePage, action) => {
       date: today,
       likeCount: 0
     }
-    state.posts.push(newPost)
+    let newState = { ...state }
+    newState.posts = [...state.posts, newPost]
+    return newState
   }
+
   const updatePost = (newNote) => {
-    state.newPostText = newNote
+    let newState = { ...state }
+    newState.newPostText = newNote
+    return newState
   }
 
   switch (action.type) {
     case ADD_POST:
-      addPost()
-      return state
+      return addPost()
     case UPDATE_POST:
-      updatePost(action.newNote)
-      return state
+      return updatePost(action.newNote)
     default:
       return state
   }
