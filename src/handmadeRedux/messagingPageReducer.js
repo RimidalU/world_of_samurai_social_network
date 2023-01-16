@@ -15,15 +15,17 @@ const messagingPageReducer = (state = initialState.messagingPage, action) => {
       date: today,
       avatar: `${require('../assets/images/default_avatar.jpg')}`
     }
-    let newState = { ...state }
-    newState.correspondence = [...state.correspondence, newMessage]
-    return newState
+    return {
+      ...state,
+      correspondence: [...state.correspondence, newMessage]
+    }
   }
 
   const updateMessage = (newNote) => {
-    let newState = { ...state }
-    newState.newMessageText = newNote
-    return newState
+    return {
+      ...state,
+      newMessageText: newNote
+    }
   }
 
   switch (action.type) {
