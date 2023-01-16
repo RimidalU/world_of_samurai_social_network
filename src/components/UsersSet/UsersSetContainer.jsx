@@ -4,7 +4,7 @@ import UsersSet from './UsersSet'
 
 const mapStateToProps = (state) => {
   return {
-    users: state.messagingPage.correspondence
+    users: state.usersPage.users
   }
 }
 

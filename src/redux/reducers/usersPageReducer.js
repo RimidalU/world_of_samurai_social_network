@@ -1,39 +1,49 @@
 import usersPageInitialState from '../initialStates/usersPageInitialState'
-import { ADD_MESSAGE, UPDATE_MESSAGE } from '../actions/usersPageActions'
-import { getDateNowInString } from '../../helpers'
+import { FOLLOW_USER, UNFOLLOW_USER, SET_USERS } from '../actions/usersPageActions'
 
 const usersPageReducer = (state = usersPageInitialState, action) => {
 
-//   const addMessage = () => {
-//     const today = getDateNowInString()
-//     const messagesLength = state.correspondence.length
-//     const newMessage = {
-//       id: messagesLength + 1,
-//       message: state.newMessageText,
-//       date: today,
-//       avatar: `${require('../../assets/images/default_avatar.jpg')}`
-//     }
-//     return {
-//       ...state,
-//       correspondence: [...state.correspondence, newMessage]
-//     }
-//   }
+  const followUser = (userId) => {
+    return {
+      ...state,
+      users: state.users.map(user => {
+        if (user.id === userId) {
+          return { ...user, followed: true }
+        }
+        return user
+      })
+    }
+  }
 
-//   const updateMessage = (newNote) => {
-//     return {
-//       ...state,
-//       newMessageText: newNote
-//     }
-//   }
+  const unfollowUser = (userId) => {
+    return {
+      ...state,
+      users: state.users.map(user => {
+        if (user.id === userId) {
+          return { ...user, followed: false }
+        }
+        return user
+      })
+    }
+  }
 
-//   switch (action.type) {
-//     case ADD_MESSAGE:
-//       return addMessage()
-//     case UPDATE_MESSAGE:
-//       return updateMessage(action.newNote)
-//     default:
-//       return state
-//   }
+  const setUsers = (newUsers) => {
+    return {
+      ...state,
+      users: [...state.users, ...newUsers]
+    }
+  }
+
+  switch (action.type) {
+    case FOLLOW_USER:
+      return followUser(action.userId)
+    case UNFOLLOW_USER:
+      return unfollowUser(action.userId)
+    case SET_USERS:
+      return setUsers(action.users)
+    default:
+      return state
+  }
 }
 
 export default usersPageReducer

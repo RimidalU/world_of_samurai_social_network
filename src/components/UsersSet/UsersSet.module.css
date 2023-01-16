@@ -1,15 +1,21 @@
 .user {
-	align-items: center;
 	position: relative;
 	display: flex;
 	background-color: var(--background);
 	margin-bottom: 10px;
 	border-radius: 5px;
 	margin-left: 2vw;
+	padding-right: 1vw;
 }
 
 .wrapper {
-	display: flex;
-	flex-direction: column;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
 	gap: 10px;
+}
+
+@media (max-width: 1200px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
 }

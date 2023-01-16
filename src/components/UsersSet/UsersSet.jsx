@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Message from '../Message/Message'
+import UserLongInfo from '../UserLongInfo/UserLongInfo'
 
 import styles from './UsersSet.module.css'
 
@@ -11,7 +11,7 @@ const UsersSet = ({ users }) => {
       {
         users.map(user => (
           <li key={user.id} className={styles.user}>
-            <Message {...user} />
+            <UserLongInfo {...user} />
           </li>
         ))
       }
