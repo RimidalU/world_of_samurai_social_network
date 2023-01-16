@@ -1,17 +1,13 @@
-import React, { useContext } from 'react'
-
-import { StoreContext } from '../../StoreContext'
+import { connect } from 'react-redux'
 
 import Penfriends from './Penfriends'
 
-const PenfriendsContainer = () => {
-
-  const store = useContext(StoreContext)
-  const penfriends = store.getState().messagingPage.penfriends
-
-  return (
-    <Penfriends penfriends={penfriends} />
-  )
+const mapStateToProps = (state) => {
+  return {
+    penfriends: state.messagingPage.penfriends
+  }
 }
+
+const PenfriendsContainer = connect(mapStateToProps)(Penfriends)
 
 export default PenfriendsContainer
