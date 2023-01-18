@@ -7,7 +7,7 @@ export const followUser = (userId) => (
   }
 )
 
-export const unfollowUser = (userId) => (
+export const unFollowUser = (userId) => (
   {
     type: UNFOLLOW_USER,
     userId

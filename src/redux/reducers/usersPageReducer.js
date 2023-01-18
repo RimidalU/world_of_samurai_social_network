@@ -15,7 +15,7 @@ const usersPageReducer = (state = usersPageInitialState, action) => {
     }
   }
 
-  const unfollowUser = (userId) => {
+  const unFollowUser = (userId) => {
     return {
       ...state,
       users: state.users.map(user => {
@@ -38,7 +38,7 @@ const usersPageReducer = (state = usersPageInitialState, action) => {
     case FOLLOW_USER:
       return followUser(action.userId)
     case UNFOLLOW_USER:
-      return unfollowUser(action.userId)
+      return unFollowUser(action.userId)
     case SET_USERS:
       return setUsers(action.users)
     default:
