@@ -10,7 +10,7 @@ const Post = ({ message, date, likeCount = 0 }) => {
   return (
     <>
       <div className={styles.date}>{date ?? today}</div>
-      <span >{message}</span>
+      <span className={styles.message}>{message}</span>
       <div className={styles.likeWrapper}>
         <img src={likeIcon} alt='like icon' className={styles.likeIcon} />
         <span>{likeCount}</span>

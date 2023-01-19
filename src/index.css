@@ -1,3 +1,13 @@
+@font-face {
+	font-family: 'Samurai';
+	src: local('Samurai'), url('../src/assets//fonts/HanZi.ttf');
+}
+
+@font-face {
+	font-family: 'BaseFont';
+	src: local('BaseFont'), url('../src/assets//fonts/WarnockPro-LightDisp.otf');
+}
+
 :root {
 	--primary: #55779d;
 	--danger: #e64f30;
@@ -5,19 +15,16 @@
 	--background: #e7cca1;
 	--font: #2b201e;
 	--white: #fff;
-}
 
-@font-face {
-	font-family: 'Samurai';
-	src: local('Samurai'), url('../src/assets/fonts/samurai.ttf');
+  --baseFont: 'BaseFont';
+	--samuraiFont: 'Samurai';
 }
 
 body {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	font-family: -apple-system, BlinkMacSystemFont, 'Samurai', 'Segoe UI', 'Roboto', 'Oxygen',
-		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	font-family: var(--baseFont	);
 	color: var(--font);
 	background-color: var(--primary);
 }

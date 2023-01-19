@@ -2,6 +2,7 @@
 	grid-area: menu-aside;
 	background-color: var(--background);
 	border-radius: 0 10px 10px 0;
+	font-family: var(--samuraiFont);
 }
 
 .links li{

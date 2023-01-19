@@ -8,13 +8,13 @@
 
 .name {
 	padding-left: 0.7vw;
-	font-size:large;
+	font-size:x-large;
 }
 
 .status {
 	margin-left: 0.7vw;
 	padding: 1vw;
-	font-size:x-small;
+	font-size: medium;
 	margin-bottom: 2vw;
 	background-color: var(--white);
 	border: 1px solid var(--secondary);
@@ -30,6 +30,7 @@
 	padding: 2px;
 	font-size: small;
 	border: 1px solid var(--secondary);
+	font-family: var(--samuraiFont);
 }
 
 .button {
@@ -38,14 +39,14 @@
 	bottom: -0.4vw;
 }
 
-.wrapper{
-display: flex;
-flex-direction: column;
-justify-content:space-between;
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 @media (max-width: 1200px) {
-.location {
+	.location {
 		font-size: xx-small;
 	}
 }

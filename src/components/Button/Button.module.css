@@ -6,4 +6,5 @@
 	border-color: var(--secondary);
 	box-shadow: 0 0 10px var(--danger);
 	cursor: pointer;
+	font-family: var(--samuraiFont);
 }
