@@ -1,5 +1,5 @@
 import usersPageInitialState from '../initialStates/usersPageInitialState'
-import { FOLLOW_USER, UNFOLLOW_USER, SET_USERS } from '../actions/usersPageActions'
+import { FOLLOW_USER, UNFOLLOW_USER, SET_USERS, SET_CURRENT_PAGE, SET_TOTAL_USERS_COUNT } from '../actions/usersPageActions'
 
 const usersPageReducer = (state = usersPageInitialState, action) => {
 
@@ -34,6 +34,18 @@ const usersPageReducer = (state = usersPageInitialState, action) => {
     }
   }
 
+  const setCurrentPage = (currentPage) => {
+    return {
+      ...state, currentPage
+    }
+  }
+
+  const setTotalUsersCount = (totalUsersCount) => {
+    return {
+      ...state, totalUsersCount
+    }
+  }
+
   switch (action.type) {
     case FOLLOW_USER:
       return followUser(action.userId)
@@ -41,6 +53,10 @@ const usersPageReducer = (state = usersPageInitialState, action) => {
       return unFollowUser(action.userId)
     case SET_USERS:
       return setUsers(action.users)
+    case SET_CURRENT_PAGE:
+      return setCurrentPage(action.currentPage)
+    case SET_TOTAL_USERS_COUNT:
+      return setTotalUsersCount(action.totalUsersCount)
     default:
       return state
   }
