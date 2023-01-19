@@ -2,7 +2,8 @@ import { connect } from 'react-redux'
 
 import { followUser, setUsers, unFollowUser } from '../../redux/actionCreators/usersPageActionCreator'
 
-import UsersSet from './UsersSet'
+// import UsersSet from './UsersSet'
+import UsersSetContainerAPI from './UsersSetContainerAPI'
 
 const mapStateToProps = (state) => {
   return {
@@ -24,6 +25,6 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-const UsersSetContainer = connect(mapStateToProps, mapDispatchToProps)(UsersSet)
+const UsersSetContainer = connect(mapStateToProps, mapDispatchToProps)(UsersSetContainerAPI)
 
 export default UsersSetContainer
