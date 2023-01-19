@@ -1,10 +1,15 @@
 .button {
 	padding: 3px;
 	border-radius: 5px;
-	margin-left: 2vw;
 	background-color: var(--secondary);
 	border-color: var(--secondary);
 	box-shadow: 0 0 10px var(--danger);
 	cursor: pointer;
 	font-family: var(--samuraiFont);
+}
+
+.selected {
+	background-color: var(--primary);
+	border-color: var(--primary);
+	color: var(--secondary);
 }

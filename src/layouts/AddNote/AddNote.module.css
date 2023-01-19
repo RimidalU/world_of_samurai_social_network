@@ -12,4 +12,5 @@
 .buttonWrapper {
 	display: flex;
 	justify-content: flex-end;
+	gap: 2vw;
 }
