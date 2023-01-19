@@ -30,7 +30,7 @@ const usersPageReducer = (state = usersPageInitialState, action) => {
   const setUsers = (newUsers) => {
     return {
       ...state,
-      users: [...state.users, ...newUsers]
+      users: [...newUsers]
     }
   }
 
