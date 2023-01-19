@@ -6,9 +6,8 @@ import UserLongInfo from '../UserLongInfo/UserLongInfo'
 import styles from './UsersSet.module.css'
 
 class UsersSetContainerAPI extends React.Component {
-  constructor(props) {
-    super(props)
 
+  componentDidMount() {
     axios.get('https://social-network.samuraijs.com/api/1.0/users/?page=2200')
       .then(response => {
         this.props.setUsers(response.data.items)
