@@ -6,20 +6,18 @@ import UserLongInfo from '../UserLongInfo/UserLongInfo'
 import styles from './UsersSet.module.css'
 
 class UsersSetContainerAPI extends React.Component {
+  constructor(props) {
+    super(props)
 
-  getUsers = () => {
-    if (this.props.users.length === 0) {
-      axios.get('https://social-network.samuraijs.com/api/1.0/users/?page=2200')
-        .then(response => {
-          this.props.setUsers(response.data.items)
-        })
-    }
+    axios.get('https://social-network.samuraijs.com/api/1.0/users/?page=2200')
+      .then(response => {
+        this.props.setUsers(response.data.items)
+      })
   }
 
   render() {
     return (
       <ul className={styles.wrapper}>
-        <button onClick={this.getUsers}>GetUsers</button>
         {
           this.props.users.map(user => (
             <li key={user.id} className={styles.user}>
