@@ -25,7 +25,20 @@ let profilePageInitialState = {
       likeCount: 145
     },
   ],
-  newPostText: ''
+  newPostText: '',
+
+  userProfile: {
+    userId: 1,
+    aboutMe: 'Throughout your life advance daily, becoming more skillful than yesterday more skillful than today.',
+    contacts: {},
+    fullName: 'Uladzimir',
+    lookingForAJob: true,
+    lookingForAJobDescription: 'The best of works',
+    photos: {
+      large: `${require('../../assets/images/default_avatar.jpg')}`,
+      small: ''
+    }
+  }
 }
 
 export default profilePageInitialState

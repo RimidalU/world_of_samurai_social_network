@@ -27,3 +27,5 @@ let renderTree = () => {
 renderTree()
 
 store.subscribe(renderTree)
+
+window.state = store

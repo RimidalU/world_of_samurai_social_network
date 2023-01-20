@@ -5,10 +5,10 @@ import UserPosts from '../../layouts/UserPosts/UserPosts'
 
 // import styles from './ProfilePage.module.css'
 
-const ProfilePage = () => {
+const ProfilePage = ({ userProfile }) => {
   return (
     <>
-      <UserProfile />
+      <UserProfile userProfile={userProfile} />
       <UserPosts />
     </>
   )

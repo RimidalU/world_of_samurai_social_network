@@ -1,4 +1,4 @@
-import { ADD_POST, UPDATE_POST } from '../actions/profilePageActions'
+import { ADD_POST, UPDATE_POST, SET_USER_PROFILE } from '../actions/profilePageActions'
 import profilePageInitialState from '../initialStates/profilePageInitialState'
 import { getDateNowInString } from '../../helpers'
 
@@ -26,11 +26,19 @@ const profilePageReducer = (state = profilePageInitialState, action) => {
     }
   }
 
+  const setUserProfile = (userProfile) => {
+    return {
+      ...state, userProfile
+    }
+  }
+
   switch (action.type) {
     case ADD_POST:
       return addPost()
     case UPDATE_POST:
       return updatePost(action.newNote)
+    case SET_USER_PROFILE:
+      return setUserProfile(action.userProfile)
     default:
       return state
   }

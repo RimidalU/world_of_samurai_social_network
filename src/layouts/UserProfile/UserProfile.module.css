@@ -11,3 +11,55 @@
 	position: relative;
 	margin-top: -170px;
 }
+
+.user {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	background-color: var(--background);
+	margin-bottom: 10px;
+	border-radius: 5px;
+	padding-right: 1vw;
+}
+
+.name {
+	margin: 0 auto;
+	padding: 0.5vw;
+	font-size: xx-large;
+	border: 2px solid var(--secondary);
+	border-radius: 10px;
+	box-shadow: 0 0 35px var(--primary);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 60ch;
+}
+
+.status {
+	padding-left: 1vw;
+	font-size: medium;
+	margin-bottom: 0.5vw;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 100ch;
+}
+
+.button {
+	position: absolute;
+	margin: 0 auto;
+	left: -0.5vw;
+	top: -0.4vw;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+@media (max-width: 1200px) {
+	.location {
+		font-size: xx-small;
+	}
+}

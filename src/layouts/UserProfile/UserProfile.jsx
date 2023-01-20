@@ -2,10 +2,20 @@ import React from 'react'
 
 import ProfileAvatar from '../../assets/images/default_avatar.jpg'
 import ProfileBackground from '../../assets/images/default_wallpaper.jpg'
+import Button from '../../components/Button/Button'
 
 import styles from './UserProfile.module.css'
 
-const UserProfile = () => {
+const UserProfile = ({ userProfile, followed }) => {
+  const { userId, aboutMe, fullName, photos, lookingForAJobDescription } = userProfile
+
+  const unFollowUser = (userId) => {
+    console.log(`No implementation 'unFollowUser' for userId:${userId}`) //TODO: add implement unFollowUser and followUser
+  }
+  const followUser = (userId) => {
+    console.log(`No implementation 'followUser' for userId:${userId}`)  //TODO: add 'open to work' badge
+  }
+
   return (
     <section>
       <article>
@@ -13,12 +23,24 @@ const UserProfile = () => {
           <img src={ProfileBackground} alt='background header of profile' className={styles.background} />
         </div>
         <div>
-          <img src={ProfileAvatar} alt='user avatar' className={styles.avatar} />
+          <img src={photos.large ?? ProfileAvatar} alt='user avatar' className={styles.avatar} />
         </div>
       </article>
 
       <article>
-        information about user
+        <div className={styles.user} >
+          <div className={styles.wrapper}>
+            <span className={styles.name}>{fullName}</span>
+            <span className={styles.status}>{aboutMe ?? ''}</span>
+            <span className={styles.status}>{`Dream work: ${lookingForAJobDescription ?? ''}`}</span>
+          </div>
+          <div className={styles.button}>
+            {followed ?
+              <Button onClick={() => unFollowUser(userId)}>{'Unfollow'}</Button> :
+              <Button onClick={() => followUser(userId)}>{'Follow'}</Button>}
+          </div>
+        </div>
+
       </article>
     </section>
   )
