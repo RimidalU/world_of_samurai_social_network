@@ -1,10 +1,7 @@
 import axios from 'axios'
 import React from 'react'
-// import Button from '../Button/Button'
 
-import UserLongInfo from '../UserLongInfo/UserLongInfo'
-import Pagination from '../Pagination/Pagination'
-import styles from './UsersSet.module.css'
+import UsersSet from './UsersSet'
 
 class UsersSetContainerAPI extends React.Component {
 
@@ -26,28 +23,18 @@ class UsersSetContainerAPI extends React.Component {
 
   render() {
 
-    let pagesCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize)
-
     return (
-      <>
-        <div>
-          <Pagination itemsCount={pagesCount} currentItem={this.props.currentPage} onItemsChanged={this.onPageChanged} />
-        </div>
-        <ul className={styles.wrapper}>
-          {
-            this.props.users.map(user => (
-              <li key={user.id} className={styles.user}>
-                <UserLongInfo {...user} followUser={this.props.followUser} unFollowUser={this.props.unFollowUser} />
-              </li>
-            ))
-          }
-        </ul >
-      </>
-
+      <UsersSet
+        users={this.props.users}
+        totalUsersCount={this.props.totalUsersCount}
+        pageSize={this.props.pageSize}
+        currentPage={this.props.currentPage}
+        followUser={this.props.followUser}
+        unFollowUser={this.props.unFollowUser}
+        onPageChanged={this.onPageChanged}
+      />
     )
   }
 }
-
-
 
 export default UsersSetContainerAPI
