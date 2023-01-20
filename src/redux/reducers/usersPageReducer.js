@@ -1,5 +1,5 @@
 import usersPageInitialState from '../initialStates/usersPageInitialState'
-import { FOLLOW_USER, UNFOLLOW_USER, SET_USERS, SET_CURRENT_PAGE, SET_TOTAL_USERS_COUNT } from '../actions/usersPageActions'
+import { FOLLOW_USER, UNFOLLOW_USER, SET_USERS, SET_CURRENT_PAGE, SET_TOTAL_USERS_COUNT, SET_IS_FETCHING } from '../actions/usersPageActions'
 
 const usersPageReducer = (state = usersPageInitialState, action) => {
 
@@ -46,6 +46,13 @@ const usersPageReducer = (state = usersPageInitialState, action) => {
     }
   }
 
+  const setIsFetching = (isFetching) => {
+    return {
+      ...state, isFetching
+    }
+  }
+
+
   switch (action.type) {
     case FOLLOW_USER:
       return followUser(action.userId)
@@ -57,6 +64,8 @@ const usersPageReducer = (state = usersPageInitialState, action) => {
       return setCurrentPage(action.currentPage)
     case SET_TOTAL_USERS_COUNT:
       return setTotalUsersCount(action.totalUsersCount)
+    case SET_IS_FETCHING:
+      return setIsFetching(action.isFetching)
     default:
       return state
   }

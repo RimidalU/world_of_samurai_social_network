@@ -1,4 +1,4 @@
-import { FOLLOW_USER, UNFOLLOW_USER, SET_USERS, SET_CURRENT_PAGE, SET_TOTAL_USERS_COUNT } from '../actions/usersPageActions'
+import { FOLLOW_USER, UNFOLLOW_USER, SET_USERS, SET_CURRENT_PAGE, SET_TOTAL_USERS_COUNT, SET_IS_FETCHING } from '../actions/usersPageActions'
 
 export const followUser = (userId) => (
   {
@@ -33,5 +33,12 @@ export const setTotalUsersCount = (totalUsersCount) => (
   {
     type: SET_TOTAL_USERS_COUNT,
     totalUsersCount
+  }
+)
+
+export const setIsFetching = (isFetching) => (
+  {
+    type: SET_IS_FETCHING,
+    isFetching
   }
 )

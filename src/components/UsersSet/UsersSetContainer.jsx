@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import { followUser, setUsers, unFollowUser, setCurrentPage, setTotalUsersCount } from '../../redux/actionCreators/usersPageActionCreator'
+import { followUser, setUsers, unFollowUser, setCurrentPage, setTotalUsersCount, setIsFetching } from '../../redux/actionCreators/usersPageActionCreator'
 
 import UsersSetContainerAPI from './UsersSetContainerAPI'
 
@@ -10,6 +10,7 @@ const mapStateToProps = (state) => {
     pageSize: state.usersPage.pageSize,
     totalUsersCount: state.usersPage.totalUsersCount,
     currentPage: state.usersPage.currentPage,
+    isFetching: state.usersPage.isFetching,
   }
 }
 
@@ -29,6 +30,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     setTotalUsersCount: (totalUsersCount) => {
       dispatch(setTotalUsersCount(totalUsersCount))
+    },
+    setIsFetching: (isFetching) => {
+      dispatch(setIsFetching(isFetching))
     }
   }
 }
