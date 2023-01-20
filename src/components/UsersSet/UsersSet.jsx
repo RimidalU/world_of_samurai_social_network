@@ -20,7 +20,7 @@ const UsersSet = ({ users, totalUsersCount, pageSize, currentPage, onPageChanged
           <ul className={styles.wrapper}>
             {
               users.map(user => (
-                <li key={user.id} className={styles.user}>
+                <li key={user.id}>
                   <UserLongInfo {...user} followUser={followUser} unFollowUser={unFollowUser} />
                 </li>
               ))
