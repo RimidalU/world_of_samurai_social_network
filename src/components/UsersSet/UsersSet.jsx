@@ -9,7 +9,7 @@ const UsersSet = ({ users, totalUsersCount, pageSize, currentPage, onPageChanged
 
 
   return (
-    <>
+    <div className={styles.pageWrapper}>
       <Pagination itemsCount={pagesCount} currentItem={currentPage} onItemsChanged={onPageChanged} />
       <ul className={styles.wrapper}>
         {
@@ -21,7 +21,7 @@ const UsersSet = ({ users, totalUsersCount, pageSize, currentPage, onPageChanged
         }
       </ul >
       <Pagination itemsCount={pagesCount} currentItem={currentPage} onItemsChanged={onPageChanged} />
-    </>
+    </div>
   )
 }
 

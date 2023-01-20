@@ -18,7 +18,12 @@ const Pagination = ({ itemsCount, currentItem, onItemsChanged, ...rest }) => {
     )
   }
 
-  return items
+  return (
+    <div>
+      {items}
+    </div>
+
+  )
 }
 
 export default Pagination

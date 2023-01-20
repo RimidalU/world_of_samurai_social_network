@@ -19,3 +19,9 @@
 		grid-template-columns: 1fr;
 	}
 }
+
+.pageWrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
