@@ -14,27 +14,18 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    followUser: (userId) => {
-      dispatch(followUser(userId))
-    },
-    unFollowUser: (userId) => {
-      dispatch(unFollowUser(userId))
-    },
-    setUsers: (users) => {
-      dispatch(setUsers(users))
-    },
-    setCurrentPage: (currentPage) => {
-      dispatch(setCurrentPage(currentPage))
-    },
-    setTotalUsersCount: (totalUsersCount) => {
-      dispatch(setTotalUsersCount(totalUsersCount))
-    },
-    setIsFetching: (isFetching) => {
-      dispatch(setIsFetching(isFetching))
-    }
-  }
+/* If you pass an AC object as the second argument to connect, then connect wraps your ACs in a wrapper
+function () => store.dispatch(AC) and passes it to the component's props.
+
+https://qna.habr.com/q/535268 */
+
+const mapDispatchToProps = {
+  followUser,
+  unFollowUser,
+  setUsers,
+  setCurrentPage,
+  setTotalUsersCount,
+  setIsFetching
 }
 
 const UsersSetContainer = connect(mapStateToProps, mapDispatchToProps)(UsersSetContainerAPI)
