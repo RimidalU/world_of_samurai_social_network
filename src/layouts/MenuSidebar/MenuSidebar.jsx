@@ -9,7 +9,7 @@ const MenuSidebar = () => {
       <nav>
         <ul className={styles.links}>
           <li>
-            <NavLink to='/'>
+            <NavLink to='/profile'>
               Profile
             </NavLink>
           </li>

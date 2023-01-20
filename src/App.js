@@ -22,7 +22,7 @@ function App() {
       <MenuSidebar />
       <main className='main'>
         <Routes>
-          <Route path="/" element={<ProfilePage />} />
+          <Route path="/profile/*" element={<ProfilePage />} />
           <Route path="/messaging/*" element={<MessagingPage />} />
           <Route path="/news" element={<NewsPage />} />
           <Route path="/users" element={<UsersPage />} />
