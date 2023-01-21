@@ -22,7 +22,9 @@ function App() {
       <MenuSidebar />
       <main className='main'>
         <Routes>
-          <Route path="/profile/*" element={<ProfilePageContainer />} />
+          <Route path="/profile" element={<ProfilePageContainer />} >
+            <Route path=":userId" element={<ProfilePageContainer />} />
+          </Route>
           <Route path="/messaging/*" element={<MessagingPage />} />
           <Route path="/news" element={<NewsPage />} />
           <Route path="/users" element={<UsersPage />} />
@@ -33,7 +35,7 @@ function App() {
       </main>
       <Sidebar />
       <Footer />
-    </div>)
+    </div >)
 }
 
 export default App
