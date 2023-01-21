@@ -6,9 +6,14 @@
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+	justify-content: space-between;
 	font-family: var(--samuraiFont);
 }
 
 .logo {
 	width: 100px;
+}
+
+.loginWrapper{
+	margin-right: 15px;
 }
