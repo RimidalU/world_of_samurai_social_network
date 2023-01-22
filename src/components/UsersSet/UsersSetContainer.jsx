@@ -7,7 +7,9 @@ import {
   setCurrentPage,
   setTotalUsersCount,
   setIsFetching,
-  setIsFollowingProgress
+  setIsFollowingProgress,
+
+  getUsersThunksCreator
 } from '../../redux/actionCreators/usersPageActionCreator'
 
 import UsersSetContainerAPI from './UsersSetContainerAPI'
@@ -35,7 +37,9 @@ const mapDispatchToProps = {
   setCurrentPage,
   setTotalUsersCount,
   setIsFetching,
-  setIsFollowingProgress
+  setIsFollowingProgress,
+
+  getUsers: getUsersThunksCreator
 }
 
 const UsersSetContainer = connect(mapStateToProps, mapDispatchToProps)(UsersSetContainerAPI)

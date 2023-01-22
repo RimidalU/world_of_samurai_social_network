@@ -1,30 +1,15 @@
 import React from 'react'
-import usersAPI from '../../api/usersAPI'
 
 import UsersSet from './UsersSet'
 
 class UsersSetContainerAPI extends React.Component {
 
   componentDidMount() {
-    this.props.setIsFetching(true)
-
-    usersAPI.getUsers(this.props.currentPage, this.props.pageSize)
-      .then(data => {
-        this.props.setTotalUsersCount(data.totalCount)
-        this.props.setUsers(data.items)
-        this.props.setIsFetching(false)
-      })
+    this.props.getUsers(this.props.currentPage, this.props.pageSize)
   }
 
   onPageChanged = (pageNumber) => {
-    this.props.setIsFetching(true)
-    this.props.setCurrentPage(pageNumber)
-
-    usersAPI.getUsers(pageNumber, this.props.pageSize)
-      .then(data => {
-        this.props.setUsers(data.items)
-        this.props.setIsFetching(false)
-      })
+    this.props.getUsers(pageNumber, this.props.pageSize)
   }
 
   render() {

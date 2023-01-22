@@ -1,4 +1,5 @@
-import { combineReducers, legacy_createStore as createStore } from 'redux'
+import { applyMiddleware, combineReducers, legacy_createStore as createStore } from 'redux'
+import thunk from 'redux-thunk'
 
 import messagingPageReducer from './reducers/messagingPageReducer'
 import profilePageReducer from './reducers/profilePageReducer'
@@ -15,6 +16,6 @@ let reducers = combineReducers(
     auth: authReducer
   })
 
-let store = createStore(reducers)
+let store = createStore(reducers, applyMiddleware(thunk))
 
 export default store

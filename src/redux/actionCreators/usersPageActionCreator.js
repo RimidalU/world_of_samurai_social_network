@@ -1,3 +1,4 @@
+import usersAPI from '../../api/usersAPI'
 import {
   FOLLOW_USER,
   UNFOLLOW_USER,
@@ -58,3 +59,19 @@ export const setIsFollowingProgress = (followingInProgress, userId) => (
     userId
   }
 )
+
+//thunks
+
+export const getUsersThunksCreator = (currentPage, pageSize) => {
+
+  return (dispatch) => {
+    dispatch(setIsFetching(true))
+
+    usersAPI.getUsers(currentPage, pageSize)
+      .then(data => {
+        dispatch(setTotalUsersCount(data.totalCount))
+        dispatch(setUsers(data.items))
+        dispatch(setIsFetching(false))
+      })
+  }
+}
