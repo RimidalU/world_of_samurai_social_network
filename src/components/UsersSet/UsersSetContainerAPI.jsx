@@ -39,6 +39,8 @@ class UsersSetContainerAPI extends React.Component {
         unFollowUser={this.props.unFollowUser}
         onPageChanged={this.onPageChanged}
         isFetching={this.props.isFetching}
+        followingInProgress={this.props.followingInProgress}
+        setIsFollowingProgress={this.props.setIsFollowingProgress}
       />
     )
   }

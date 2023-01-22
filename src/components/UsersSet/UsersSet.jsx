@@ -6,7 +6,7 @@ import UserLongInfo from '../UserLongInfo/UserLongInfo'
 
 import styles from './UsersSet.module.css'
 
-const UsersSet = ({ users, totalUsersCount, pageSize, currentPage, onPageChanged, followUser, unFollowUser, isFetching }) => {
+const UsersSet = ({ users, totalUsersCount, pageSize, currentPage, onPageChanged, followUser, unFollowUser, isFetching, followingInProgress, setIsFollowingProgress }) => {
   let pagesCount = Math.ceil(totalUsersCount / pageSize)
 
   return (
@@ -21,7 +21,7 @@ const UsersSet = ({ users, totalUsersCount, pageSize, currentPage, onPageChanged
             {
               users.map(user => (
                 <li key={user.id}>
-                  <UserLongInfo {...user} followUser={followUser} unFollowUser={unFollowUser} />
+                  <UserLongInfo {...user} followingInProgress={followingInProgress} followUser={followUser} unFollowUser={unFollowUser} setIsFollowingProgress={setIsFollowingProgress} />
                 </li>
               ))
             }

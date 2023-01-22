@@ -1,5 +1,13 @@
 import usersPageInitialState from '../initialStates/usersPageInitialState'
-import { FOLLOW_USER, UNFOLLOW_USER, SET_USERS, SET_CURRENT_PAGE, SET_TOTAL_USERS_COUNT, SET_IS_FETCHING } from '../actions/usersPageActions'
+import {
+  FOLLOW_USER,
+  UNFOLLOW_USER,
+  SET_USERS,
+  SET_CURRENT_PAGE,
+  SET_TOTAL_USERS_COUNT,
+  SET_IS_FETCHING,
+  SET_IS_FOLLOWING_PROGRESS
+} from '../actions/usersPageActions'
 
 const usersPageReducer = (state = usersPageInitialState, action) => {
 
@@ -52,6 +60,14 @@ const usersPageReducer = (state = usersPageInitialState, action) => {
     }
   }
 
+  const setIsFollowingProgress = (followingInProgress, userId) => {
+    return {
+      ...state,
+      followingInProgress: followingInProgress
+        ? [...state.followingInProgress, userId]
+        : state.followingInProgress.filter(id => id !== userId)
+    }
+  }
 
   switch (action.type) {
     case FOLLOW_USER:
@@ -66,6 +82,8 @@ const usersPageReducer = (state = usersPageInitialState, action) => {
       return setTotalUsersCount(action.totalUsersCount)
     case SET_IS_FETCHING:
       return setIsFetching(action.isFetching)
+    case SET_IS_FOLLOWING_PROGRESS:
+      return setIsFollowingProgress(action.followingInProgress, action.userId)
     default:
       return state
   }

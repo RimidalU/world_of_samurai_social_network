@@ -7,28 +7,34 @@ import unknownAvatar from '../../assets/images/unknown_avatar.png'
 import Button from '../Button/Button'
 import styles from './UserLongInfo.module.css'
 
-const UserLongInfo = ({ name, id, location = 'undefined', status, photos, followed, followUser, unFollowUser }) => {
+const UserLongInfo = ({ name, id, location = 'undefined', status, photos, followed, followingInProgress, followUser, unFollowUser, setIsFollowingProgress }) => {
 
   const defaultStatus = 'To act for the sake of Man...'    //TODO: implement location in my backend
   //TODO: implement name and status tooltip
 
   const follow = () => {
+    setIsFollowingProgress(true, id)
     subscriptionsAPI.subscribeToUser(id)
       .then(data => {
         if (data.resultCode === 0) {
           followUser(id)
         }
+        setIsFollowingProgress(false, id)
       })
   }
 
   const unFollow = () => {
+    setIsFollowingProgress(true, id)
     subscriptionsAPI.unfollowUser(id)
       .then(data => {
         if (data.resultCode === 0) {
           unFollowUser(id)
         }
+        setIsFollowingProgress(false, id)
       })
   }
+
+  let isDisabled = followingInProgress.some(userId => userId === id)
 
   return (
 
@@ -45,11 +51,10 @@ const UserLongInfo = ({ name, id, location = 'undefined', status, photos, follow
       {/* } */}
       <div className={styles.button}>
         {followed ?
-          <Button onClick={unFollow}>{'Unfollow'}</Button> :
-          <Button onClick={follow}>{'Follow'}</Button>}
+          <Button isDisabled={isDisabled} onClick={unFollow}>{'Unfollow'}</Button> :
+          <Button isDisabled={isDisabled} onClick={follow}>{'Follow'}</Button>}
       </div>
     </div>
-
   )
 }
 
