@@ -1,3 +1,4 @@
+import axios from 'axios'
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
@@ -8,7 +9,34 @@ import styles from './UserLongInfo.module.css'
 const UserLongInfo = ({ name, id, location = 'undefined', status, photos, followed, followUser, unFollowUser }) => {
 
   const defaultStatus = 'To act for the sake of Man...'    //TODO: implement location in my backend
-                                                           //TODO: implement name and status tooltip
+  //TODO: implement name and status tooltip
+
+  const follow = () => {
+    axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${id}`, {},
+      {
+        withCredentials: true,
+        ' API-KEY': '3a85fa12-3a31-4f05-9860-0522a4d39480'
+      })
+      .then(response => {
+        if (response.data.resultCode === 0) {
+          followUser(id)
+        }
+      })
+  }
+
+  const unFollow = () => {
+    axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${id}`,
+      {
+        withCredentials: true,
+        ' API-KEY': '3a85fa12-3a31-4f05-9860-0522a4d39480'
+      })
+      .then(response => {
+        if (response.data.resultCode === 0) {
+          unFollowUser(id)
+        }
+      })
+  }
+
   return (
 
     <div className={styles.user} >
@@ -24,8 +52,8 @@ const UserLongInfo = ({ name, id, location = 'undefined', status, photos, follow
       {/* } */}
       <div className={styles.button}>
         {followed ?
-          <Button onClick={() => unFollowUser(id)}>{'Unfollow'}</Button> :
-          <Button onClick={() => followUser(id)}>{'Follow'}</Button>}
+          <Button onClick={unFollow}>{'Unfollow'}</Button> :
+          <Button onClick={follow}>{'Follow'}</Button>}
       </div>
     </div>
 
