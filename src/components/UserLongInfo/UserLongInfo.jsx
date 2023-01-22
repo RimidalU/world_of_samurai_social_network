@@ -1,6 +1,7 @@
-import axios from 'axios'
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+
+import subscriptionsAPI from '../../api/subscriptionsAPI'
 
 import unknownAvatar from '../../assets/images/unknown_avatar.png'
 import Button from '../Button/Button'
@@ -12,26 +13,18 @@ const UserLongInfo = ({ name, id, location = 'undefined', status, photos, follow
   //TODO: implement name and status tooltip
 
   const follow = () => {
-    axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${id}`, {},
-      {
-        withCredentials: true,
-        ' API-KEY': '3a85fa12-3a31-4f05-9860-0522a4d39480'
-      })
-      .then(response => {
-        if (response.data.resultCode === 0) {
+    subscriptionsAPI.subscribeToUser(id)
+      .then(data => {
+        if (data.resultCode === 0) {
           followUser(id)
         }
       })
   }
 
   const unFollow = () => {
-    axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${id}`,
-      {
-        withCredentials: true,
-        ' API-KEY': '3a85fa12-3a31-4f05-9860-0522a4d39480'
-      })
-      .then(response => {
-        if (response.data.resultCode === 0) {
+    subscriptionsAPI.unfollowUser(id)
+      .then(data => {
+        if (data.resultCode === 0) {
           unFollowUser(id)
         }
       })

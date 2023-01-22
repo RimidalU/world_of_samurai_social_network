@@ -1,5 +1,5 @@
-import axios from 'axios'
 import React from 'react'
+import profileAPI from '../../api/profileAPI'
 
 import ProfilePage from './ProfilePage'
 
@@ -8,9 +8,9 @@ class ProfilePageContainerAPI extends React.Component {
   componentDidMount() {
     let userId = this.props.router.params.userId
 
-    axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${userId ?? 11}`)
-      .then(response => {
-        this.props.setUserProfile(response.data)
+    profileAPI.getProfile(userId)
+      .then(data => {
+        this.props.setUserProfile(data)
       })
   }
 
@@ -19,7 +19,6 @@ class ProfilePageContainerAPI extends React.Component {
       <ProfilePage {...this.props} userProfile={this.props.userProfile} />
     )
   }
-
 }
 
 export default ProfilePageContainerAPI

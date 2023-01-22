@@ -1,5 +1,5 @@
-import axios from 'axios'
 import React from 'react'
+import usersAPI from '../../api/usersAPI'
 
 import UsersSet from './UsersSet'
 
@@ -7,11 +7,11 @@ class UsersSetContainerAPI extends React.Component {
 
   componentDidMount() {
     this.props.setIsFetching(true)
-    axios.get(`https://social-network.samuraijs.com/api/1.0/users/?page=${this.props.currentPage}&count=${this.props.pageSize}`,
-      { withCredentials: true })
-      .then(response => {
-        this.props.setTotalUsersCount(response.data.totalCount)
-        this.props.setUsers(response.data.items)
+
+    usersAPI.getUsers(this.props.currentPage, this.props.pageSize)
+      .then(data => {
+        this.props.setTotalUsersCount(data.totalCount)
+        this.props.setUsers(data.items)
         this.props.setIsFetching(false)
       })
   }
@@ -19,10 +19,10 @@ class UsersSetContainerAPI extends React.Component {
   onPageChanged = (pageNumber) => {
     this.props.setIsFetching(true)
     this.props.setCurrentPage(pageNumber)
-    axios.get(`https://social-network.samuraijs.com/api/1.0/users/?page=${pageNumber}&count=${this.props.pageSize}`,
-      { withCredentials: true })
-      .then(response => {
-        this.props.setUsers(response.data.items)
+
+    usersAPI.getUsers(pageNumber, this.props.pageSize)
+      .then(data => {
+        this.props.setUsers(data.items)
         this.props.setIsFetching(false)
       })
   }
