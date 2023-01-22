@@ -2,7 +2,7 @@ import React from 'react'
 import Pagination from '../Pagination/Pagination'
 import Spinier from '../Spinier/Spinier'
 
-import UserLongInfo from '../UserLongInfo/UserLongInfo'
+import UserLongInfoContainerAPI from '../UserLongInfo/UserLongInfoContainerAPI'
 
 import styles from './UsersSet.module.css'
 
@@ -21,7 +21,7 @@ const UsersSet = ({ users, totalUsersCount, pageSize, currentPage, onPageChanged
             {
               users.map(user => (
                 <li key={user.id}>
-                  <UserLongInfo {...user} followingInProgress={followingInProgress} followUser={followUser} unFollowUser={unFollowUser} setIsFollowingProgress={setIsFollowingProgress} />
+                  <UserLongInfoContainerAPI {...user} followingInProgress={followingInProgress} followUser={followUser} unFollowUser={unFollowUser} setIsFollowingProgress={setIsFollowingProgress} />
                 </li>
               ))
             }
