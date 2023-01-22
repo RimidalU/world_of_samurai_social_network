@@ -2,11 +2,8 @@ import { connect } from 'react-redux'
 
 import {
   followUser,
-  setUsers,
   unFollowUser,
   setCurrentPage,
-  setTotalUsersCount,
-  setIsFetching,
   setIsFollowingProgress,
 
   getUsersThunksCreator
@@ -33,10 +30,7 @@ https://qna.habr.com/q/535268 */
 const mapDispatchToProps = {
   followUser,
   unFollowUser,
-  setUsers,
   setCurrentPage,
-  setTotalUsersCount,
-  setIsFetching,
   setIsFollowingProgress,
 
   getUsers: getUsersThunksCreator
