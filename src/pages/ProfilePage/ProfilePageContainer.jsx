@@ -1,8 +1,8 @@
 import { connect } from 'react-redux'
 
 import ProfilePageContainerAPI from './ProfilePageContainerAPI'
-import { setUserProfile } from '../../redux/actionCreators/profilePageActionCreator'
 import withRouter from '../../helpers/HOKs/withRouter'
+import { getProfileThunksCreator } from '../../redux/actionCreators/profilePageActionCreator'
 
 const mapStateToProps = (state) => {
   return {
@@ -10,12 +10,8 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    setUserProfile: (userProfile) => {
-      dispatch(setUserProfile(userProfile))
-    }
-  }
+const mapDispatchToProps = {
+  getProfile: getProfileThunksCreator
 }
 
 let ProfilePageContainerAPIWithUrlData = withRouter(ProfilePageContainerAPI)

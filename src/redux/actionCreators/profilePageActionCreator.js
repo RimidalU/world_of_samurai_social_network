@@ -1,4 +1,6 @@
 import { ADD_POST, UPDATE_POST, SET_USER_PROFILE } from '../actions/profilePageActions'
+import profileAPI from '../../api/profileAPI'
+
 
 export const addPost = () => ({ type: ADD_POST })
 
@@ -14,3 +16,15 @@ export const setUserProfile = (userProfile) => (
     userProfile
   }
 )
+
+//thunks
+
+export const getProfileThunksCreator = (userId) => {
+
+  return (dispatch) => {
+    profileAPI.getProfile(userId)
+      .then(data => {
+        dispatch(setUserProfile(data))
+      })
+  }
+}
