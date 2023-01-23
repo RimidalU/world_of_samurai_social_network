@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 
 import HeaderContainerAPI from './HeaderContainerAPI'
-import { setAuthUserData } from '../../redux/actionCreators/authActionCreator'
+import { loginThunksCreator } from '../../redux/actionCreators/authActionCreator'
 
 const mapStateToProps = (state) => {
   return {
@@ -10,12 +10,8 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    setAuthUserData: (id, email, login) => {
-      dispatch(setAuthUserData(id, email, login))
-    }
-  }
+const mapDispatchToProps = {
+  loginUser: loginThunksCreator
 }
 
 const HeaderContainer = connect(mapStateToProps, mapDispatchToProps)(HeaderContainerAPI)
