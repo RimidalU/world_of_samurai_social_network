@@ -1,3 +1,4 @@
+import subscriptionsAPI from '../../api/subscriptionsAPI'
 import usersAPI from '../../api/usersAPI'
 import {
   FOLLOW_USER,
@@ -72,6 +73,36 @@ export const getUsersThunksCreator = (currentPage, pageSize) => {
         dispatch(setTotalUsersCount(data.totalCount))
         dispatch(setUsers(data.items))
         dispatch(setIsFetching(false))
+      })
+  }
+}
+
+export const followUserThunksCreator = (id) => {
+
+  return (dispatch) => {
+    dispatch(setIsFollowingProgress(true, id))
+
+    subscriptionsAPI.subscribeToUser(id)
+      .then(data => {
+        if (data.resultCode === 0) {
+          dispatch(followUser(id))
+        }
+        dispatch(setIsFollowingProgress(false, id))
+      })
+  }
+}
+
+export const unFollowUserThunksCreator = (id) => {
+
+  return (dispatch) => {
+    dispatch(setIsFollowingProgress(true, id))
+
+    subscriptionsAPI.unfollowUser(id)
+      .then(data => {
+        if (data.resultCode === 0) {
+          dispatch(unFollowUser(id))
+        }
+        dispatch(setIsFollowingProgress(false, id))
       })
   }
 }

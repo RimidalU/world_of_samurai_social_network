@@ -1,12 +1,12 @@
 import { connect } from 'react-redux'
 
 import {
-  followUser,
-  unFollowUser,
   setCurrentPage,
   setIsFollowingProgress,
 
-  getUsersThunksCreator
+  getUsersThunksCreator,
+  followUserThunksCreator,
+  unFollowUserThunksCreator
 } from '../../redux/actionCreators/usersPageActionCreator'
 
 import UsersSetContainerAPI from './UsersSetContainerAPI'
@@ -24,16 +24,15 @@ const mapStateToProps = (state) => {
 
 /* If you pass an AC object as the second argument to connect, then connect wraps your ACs in a wrapper
 function () => store.dispatch(AC) and passes it to the component's props.
-
 https://qna.habr.com/q/535268 */
 
 const mapDispatchToProps = {
-  followUser,
-  unFollowUser,
   setCurrentPage,
   setIsFollowingProgress,
 
-  getUsers: getUsersThunksCreator
+  getUsers: getUsersThunksCreator,
+  followUser: followUserThunksCreator,
+  unFollowUser: unFollowUserThunksCreator,
 }
 
 const UsersSetContainer = connect(mapStateToProps, mapDispatchToProps)(UsersSetContainerAPI)
