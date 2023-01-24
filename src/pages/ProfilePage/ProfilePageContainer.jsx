@@ -1,13 +1,14 @@
 import { connect } from 'react-redux'
 
-import ProfilePageContainerAPI from './ProfilePageContainerAPI'
 import withRouter from '../../helpers/HOKs/withRouter'
+
+import ProfilePageContainerAPI from './ProfilePageContainerAPI'
 import { getProfileThunksCreator } from '../../redux/actionCreators/profilePageActionCreator'
+import { withAuthRedirect } from '../../hoc/withAuthRedirect'
 
 const mapStateToProps = (state) => {
   return {
     userProfile: state.profilePage.userProfile,
-    isAuth: state.auth.isAuth
   }
 }
 
@@ -17,6 +18,6 @@ const mapDispatchToProps = {
 
 let ProfilePageContainerAPIWithUrlData = withRouter(ProfilePageContainerAPI)
 
-const ProfilePageContainer = connect(mapStateToProps, mapDispatchToProps)(ProfilePageContainerAPIWithUrlData)
+const ProfilePageContainer = withAuthRedirect(connect(mapStateToProps, mapDispatchToProps)(ProfilePageContainerAPIWithUrlData))
 
 export default ProfilePageContainer
