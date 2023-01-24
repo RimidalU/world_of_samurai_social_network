@@ -1,4 +1,5 @@
 import React from 'react'
+import { Navigate } from 'react-router-dom'
 
 import ProfilePage from './ProfilePage'
 
@@ -10,6 +11,9 @@ class ProfilePageContainerAPI extends React.Component {
   }
 
   render() {
+
+    if (!this.props.isAuth) return <Navigate to={'/login'} />
+
     return (
       <ProfilePage {...this.props} userProfile={this.props.userProfile} />
     )

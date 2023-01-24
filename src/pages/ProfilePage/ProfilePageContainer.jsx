@@ -6,7 +6,8 @@ import { getProfileThunksCreator } from '../../redux/actionCreators/profilePageA
 
 const mapStateToProps = (state) => {
   return {
-    userProfile: state.profilePage.userProfile
+    userProfile: state.profilePage.userProfile,
+    isAuth: state.auth.isAuth
   }
 }
 

@@ -1,12 +1,14 @@
 import React from 'react'
 
-import { NavLink } from 'react-router-dom'
+import { Navigate, NavLink } from 'react-router-dom'
 
 import UserShortInfo from '../UserShortInfo/UserShortInfo'
 
 import styles from './Penfriends.module.css'
 
-const Penfriends = ({penfriends}) => {
+const Penfriends = ({penfriends, isAuth}) => {
+
+  if(!isAuth) return <Navigate to={'/login'}/>
 
   return (
     <ul className={styles.wrapper}>

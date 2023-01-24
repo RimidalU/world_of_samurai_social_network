@@ -4,7 +4,8 @@ import Penfriends from './Penfriends'
 
 const mapStateToProps = (state) => {
   return {
-    penfriends: state.messagingPage.penfriends
+    penfriends: state.messagingPage.penfriends,
+    isAuth: state.auth.isAuth
   }
 }
 

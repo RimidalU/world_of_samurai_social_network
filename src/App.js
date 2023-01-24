@@ -14,6 +14,7 @@ import SettingsPage from './pages/SettingsPage/SettingsPage'
 import './App.css'
 import UsersPage from './pages/UsersPage/UsersPage'
 import HeaderContainer from './layouts/Header/HeaderContainer'
+import LoginPage from './pages/LoginPage/LoginPage'
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path="/users" element={<UsersPage />} />
           <Route path="/music" element={<MusicPage />} />
           <Route path="/settings" element={<SettingsPage />} />
+          <Route path="/login" element={<LoginPage />} />
           <Route path="*" element={<UnavailablePage />} />
         </Routes>
       </main>
