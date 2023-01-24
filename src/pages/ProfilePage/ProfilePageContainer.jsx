@@ -1,4 +1,5 @@
 import { connect } from 'react-redux'
+import { compose } from 'redux'
 
 import withRouter from '../../helpers/HOKs/withRouter'
 
@@ -16,8 +17,8 @@ const mapDispatchToProps = {
   getProfile: getProfileThunksCreator
 }
 
-let ProfilePageContainerAPIWithUrlData = withRouter(ProfilePageContainerAPI)
-
-const ProfilePageContainer = withAuthRedirect(connect(mapStateToProps, mapDispatchToProps)(ProfilePageContainerAPIWithUrlData))
-
-export default ProfilePageContainer
+export default compose(
+  withRouter,
+  withAuthRedirect,
+  connect(mapStateToProps, mapDispatchToProps))
+  (ProfilePageContainerAPI)

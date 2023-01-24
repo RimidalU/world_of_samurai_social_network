@@ -1,4 +1,6 @@
 import { connect } from 'react-redux'
+import { compose } from 'redux'
+
 import { withAuthRedirect } from '../../hoc/withAuthRedirect'
 
 import Penfriends from './Penfriends'
@@ -9,6 +11,7 @@ const mapStateToProps = (state) => {
   }
 }
 
-const PenfriendsContainer = withAuthRedirect(connect(mapStateToProps)(Penfriends))
-
-export default PenfriendsContainer
+export default compose(
+  withAuthRedirect,
+  connect(mapStateToProps)
+  )(Penfriends)
