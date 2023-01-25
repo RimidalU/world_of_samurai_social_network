@@ -1,6 +1,6 @@
 import React from 'react'
 
-import ProfileAvatar from '../../assets/images/default_avatar.jpg'
+import ProfileAvatar from '../../assets/images/unknown_avatar.png'
 import ProfileBackground from '../../assets/images/default_wallpaper.jpg'
 import Button from '../../components/Button/Button'
 
