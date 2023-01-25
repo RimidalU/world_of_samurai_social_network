@@ -1,0 +1,10 @@
+.status {
+	margin-left: 0.7vw;
+	padding: 1vw;
+	font-size: medium;
+	margin-bottom: 2vw;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 50ch;
+}

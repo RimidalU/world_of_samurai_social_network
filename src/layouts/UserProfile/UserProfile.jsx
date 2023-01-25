@@ -5,6 +5,7 @@ import ProfileBackground from '../../assets/images/default_wallpaper.jpg'
 import Button from '../../components/Button/Button'
 
 import styles from './UserProfile.module.css'
+import ProfileStatus from '../../components/ProfileStatus/ProfileStatus'
 
 const UserProfile = ({ userProfile, followed }) => {
   const { userId, aboutMe, fullName, photos, lookingForAJobDescription } = userProfile
@@ -31,7 +32,7 @@ const UserProfile = ({ userProfile, followed }) => {
         <div className={styles.user} >
           <div className={styles.wrapper}>
             <span className={styles.name}>{fullName}</span>
-            <span className={styles.status}>{aboutMe ?? ''}</span>
+            <ProfileStatus aboutMe={aboutMe}/>
             <span className={styles.status}>{`Dream work: ${lookingForAJobDescription ?? ''}`}</span>
           </div>
           <div className={styles.button}>
